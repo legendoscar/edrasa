@@ -1,0 +1,14 @@
+{
+  "name": "losintech/losinsms",
+  "authors": [
+    {
+      "name": "Claret Nnamocha",
+      "email": "devclareo@gmail.com"
+    }
+  ],
+  "require": {
+    "cloudinary/cloudinary_php": "^2.2",
+    "claretnnamocha/php-logger": "^1.0",
+    "vlucas/phpdotenv": "^5.3"
+  }
+}
