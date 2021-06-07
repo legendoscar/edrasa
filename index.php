@@ -56,8 +56,8 @@
  */
 
 
-$env = $_SERVER['SERVER_NAME'] === 'localhost' ? 'development' : 'production';
-define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+$env = in_array($_SERVER['SERVER_NAME'], ['localhost', 'losinsms-dev.herokuapp.com']) ? 'development' : 'production';
+define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : $env);
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
