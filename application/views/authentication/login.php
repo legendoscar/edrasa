@@ -37,6 +37,7 @@
                         <div class="content">
                             <div class="image-hader">
                                 <h2><?php echo translate('welcome_to'); ?></h2>
+                                <i><?php echo json_encode($global_config); ?></i>
                             </div>
                             <div class="center img-hol-p">
                                 <img src="<?php echo $global_config['logo_file']; ?>" height="60" alt="<?php echo $global_config['institute_name']; ?>">
