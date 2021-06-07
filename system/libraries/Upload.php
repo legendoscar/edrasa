@@ -732,9 +732,9 @@ class CI_Upload
          */
 
         $this->cloudinary = new Cloudinary('cloudinary://712344264561751:ZO8xoUgEaobAvtWwrKt3HDvG-eU@hivohtpjn');
+
+
         $upload = $this->cloudinary->uploadApi()->upload($this->file_temp);
-
-
         /*
          * Set the finalized image dimensions
          * This sets the image width/height (assuming the
@@ -742,6 +742,7 @@ class CI_Upload
          * in the "data" function.
          */
         $this->set_image_properties($this->upload_path . $this->file_name);
+        Console::info($upload['secure_url']);
         return $upload['secure_url'];
     }
 

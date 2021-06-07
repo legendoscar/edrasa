@@ -290,7 +290,6 @@ class Accounting extends Admin_Controller
 
                     $this->upload->initialize($config);
                     $file_name = $this->upload->do_upload_cloudinary('attachment_file');
-                    Console::info('afta', $file_name);
                     // move_uploaded_file($_FILES["attachment_file"]["tmp_name"], "./uploads/attachments/voucher/" . $file_name);
                     $this->db->where('id', $insert_id);
                     $this->db->update('transactions', array('attachments' => $file_name));

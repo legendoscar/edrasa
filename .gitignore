@@ -1,3 +1,4 @@
 /uploads
 /vendor
 .vscode
+*.env
