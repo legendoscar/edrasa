@@ -102,7 +102,7 @@ $db['default'] = array(
 
 $db['production'] = array(
     'dsn' => '',
-    'hostname' => $host,
+    'hostname' => 'losinsms.com',
     'username' => 'losintec_sms',
     'password' => 'R)OfTfcASp2e',
     'database' => 'losintec_losin_sms',
