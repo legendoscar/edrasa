@@ -73,8 +73,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 $active_group = $_SERVER['SERVER_NAME'] === 'localhost' ? 'default' : 'production';
 
-$host = $active_group === 'production' and str_ends_with($_SERVER['SERVER_NAME'], 'losinsms.com') ? 'localhost' : 'losinsms.com';
-
+$host = ($active_group === 'production') && str_ends_with($_SERVER['SERVER_NAME'], 'losinsms.com') ? 'localhost' : 'losinsms.com';
+print($host);
+die('ggg');
 $query_builder = true;
 
 
