@@ -57,7 +57,7 @@
 
 
 $env = $_SERVER['SERVER_NAME'] === 'localhost' ? 'development' : 'production';
-define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : $env);
+define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
