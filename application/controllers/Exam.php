@@ -553,6 +553,7 @@ class Exam extends Admin_Controller
             if (!get_permission('report_card', 'is_view')) {
                 ajax_access_denied();
             }
+
             $this->data['student_array'] = $this->input->post('student_id');
             $this->data['remarks_array'] = $this->input->post('remarks');
             $this->data['grade_scale'] = $this->input->post('grade_scale');
@@ -599,5 +600,4 @@ class Exam extends Admin_Controller
         }
         echo $html;
     }
-
 }
