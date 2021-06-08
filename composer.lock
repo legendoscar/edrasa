@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5054c4ceb7f831965e10b93abc7e28d0",
+    "content-hash": "dedd913abc7f78ef58d6dd22946cf0cb",
     "packages": [
         {
             "name": "claretnnamocha/php-logger",
