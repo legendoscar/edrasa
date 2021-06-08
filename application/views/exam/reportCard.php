@@ -37,7 +37,7 @@ if (count($student_array)) {
 			<table border="0" style="margin-top: 20px; height: 100px;">
 				<tbody>
 					<tr>
-						<td style="width:40%;vertical-align: top;"><img style="width:200px;" src="<?php echo $branch_config['logo'] ?>"></td>
+						<td style="width:40%;vertical-align: top;"><img style="width:200px;" src="<?php echo $branch_config['logo'] ?? base_url('uploads/app_image/report-card-logo.png') ?>"></td>
 						<td style="width:60%;vertical-align: top;">
 							<table align="right" class="table-head text-right">
 								<tbody>
