@@ -17,5 +17,5 @@
     "symfony/polyfill-php56": "*",
     "symfony/polyfill-php70": "*",
     "symfony/polyfill-mbstring": "*"
-}
+  }
 }
