@@ -6,9 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta name="keywords" content="">
-    <meta name="description" content="Login - <?php echo $global_config['institute_name']; ?>">
+    <meta name="description" content="<?php echo translate('login'); ?> - <?php echo $global_config['institute_name']; ?>">
     <meta name="author" content="Losintech">
-    <title><?php echo translate('login');  ?> - <?php echo $global_config['institute_name']; ?></title>
+
+    <meta name="og:title" content="<?php echo translate('login'); ?> - <?php echo $global_config['institute_name']; ?>">
+    <meta name="og:description" content="<?php echo translate('login'); ?> - <?php echo $global_config['institute_name']; ?>">
+    <meta property="og:image" content="<?php echo $global_config['logo_file']; ?>" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+
+    <title><?php echo translate('login'); ?> - <?php echo $global_config['institute_name']; ?></title>
     <link rel="shortcut icon" href="<?php echo $global_config['logo_file']; ?>">
 
     <!-- Web Fonts  -->
@@ -70,7 +77,10 @@
                             <h2><?php echo $global_config['institute_name']; ?></h2>
                         </div>
                         <?php echo form_open($this->uri->uri_string()); ?>
-                        <div class="form-group <?php if (form_error('email')) echo 'has-error'; ?>">
+                        <div class="form-group <?php if (form_error('email')) {
+                                                    echo 'has-error';
+                                                }
+                                                ?>">
                             <div class="input-group input-group-icon">
                                 <span class="input-group-addon">
                                     <span class="icon">
@@ -81,7 +91,10 @@
                             </div>
                             <span class="error"><?php echo form_error('email'); ?></span>
                         </div>
-                        <div class="form-group <?php if (form_error('password')) echo 'has-error'; ?>">
+                        <div class="form-group <?php if (form_error('password')) {
+                                                    echo 'has-error';
+                                                }
+                                                ?>">
                             <div class="input-group input-group-icon">
                                 <span class="input-group-addon">
                                     <span class="icon"><i class="fas fa-unlock-alt"></i></span>
