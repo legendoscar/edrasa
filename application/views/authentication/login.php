@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta name="keywords" content="">
-    <meta name="description" content="<?php echo translate('login'); ?> - <?php echo $global_config['institute_name']; ?>">
+    <meta name="description" content="<?php echo $global_config['institute_name']; ?>">
     <meta name="author" content="Losintech">
 
     <meta name="og:title" content="<?php echo translate('login'); ?> - <?php echo $global_config['institute_name']; ?>">
-    <meta name="og:description" content="<?php echo translate('login'); ?> - <?php echo $global_config['institute_name']; ?>">
+    <meta name="og:description" content="<?php echo $global_config['institute_name']; ?>">
     <meta property="og:image" content="<?php echo $global_config['logo_file']; ?>" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
