@@ -1,5 +1,5 @@
 # losinsms
 School Management System powered by Losintech
 
-Language: PHP
+Language: PHP  
 Framework: Codeigniter
