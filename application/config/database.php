@@ -71,7 +71,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | the query builder class.
  */
 
-$active_group = $_SERVER['SERVER_NAME'] === 'localhost' ? 'default' : 'production';
+$active_group = in_array($_SERVER['SERVER_NAME'], ['localhost', '127.0.0.1']) ? 'default' : 'production';
 
 $query_builder = true;
 
