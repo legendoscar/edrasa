@@ -525,6 +525,8 @@ $config['rewrite_short_tags'] = false;
 | Array:        array('10.0.1.200', '192.168.5.0/24')
  */
 $config['proxy_ips'] = '';
+
+
 $config['installed'] = true;
 $config['product_name'] = 'losin_school_management_system';
 $config['version'] = '1.0.0';

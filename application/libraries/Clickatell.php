@@ -1,21 +1,23 @@
-<?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
 
 /**
  * Clickatell Class
  *
- * @package		Clickatell
- * @subpackage	Libraries
- * @category	SMS Gateway
- * @author		Zachie du Bruyn
+ * @package        Clickatell
+ * @subpackage    Libraries
+ * @category    SMS Gateway
+ * @author        Zachie du Bruyn
  */
 class Clickatell
 {
-    const ERR_NONE              = 0;
-    const ERR_AUTH_FAIL         = 1;
+    const ERR_NONE = 0;
+    const ERR_AUTH_FAIL = 1;
     const ERR_SEND_MESSAGE_FAIL = 2;
-    const ERR_SESSION_EXPIRED   = 3;
-    const ERR_PING_FAIL         = 4;
-    const ERR_CALL_FAIL         = 5;
+    const ERR_SESSION_EXPIRED = 3;
+    const ERR_PING_FAIL = 4;
+    const ERR_CALL_FAIL = 5;
 
     // public vars
     public $error = SELF::ERR_NONE;
@@ -23,7 +25,7 @@ class Clickatell
 
     // private vars
     private $ci;
-    private $session_id = FALSE;
+    private $session_id = false;
 
     const BASEURL = "http://api.clickatell.com";
 
@@ -32,17 +34,19 @@ class Clickatell
      */
     public function __construct()
     {
-        $ci 		= & get_instance();
+        $ci = &get_instance();
         if (is_superadmin_loggedin()) {
             $branchID = $ci->input->post('branch_id');
         } else {
             $branchID = get_loggedin_branch_id();
         }
         $clickatell = $ci->db->get_where('sms_credential', array('sms_api_id' => 2, 'branch_id' => $branchID))->row_array();
-        $this->username = $clickatell['field_one'];
-        $this->password = $clickatell['field_two'];
-        $this->api_id   = $clickatell['field_three'];
-        $this->from_no  = $clickatell['field_four'];
+        if ($clickatell) {
+            $this->username = $clickatell['field_one'];
+            $this->password = $clickatell['field_two'];
+            $this->api_id = $clickatell['field_three'];
+            $this->from_no = $clickatell['field_four'];
+        }
     }
 
     /**
@@ -52,22 +56,19 @@ class Clickatell
      */
     public function authenticate()
     {
-        $url = self::BASEURL.'/http/auth?user='.$this->username
-             . '&password='.$this->password.'&api_id='.$this->api_id;
+        $url = self::BASEURL . '/http/auth?user=' . $this->username
+            . '&password=' . $this->password . '&api_id=' . $this->api_id;
 
         $result = $this->_do_api_call($url);
-        $result = explode(':',$result);
+        $result = explode(':', $result);
 
-        if ($result[0] == 'OK')
-        {
+        if ($result[0] == 'OK') {
             $this->session_id = trim($result[1]);
             return $this->session_id;
-        }
-        else
-        {
+        } else {
             $this->error = self::ERR_AUTH_FAIL;
             $this->error_message = $result[0];
-            return FALSE;
+            return false;
         }
     }
 
@@ -81,66 +82,53 @@ class Clickatell
      */
     public function send_message($to, $message)
     {
-        if ($this->session_id == FALSE)
-        {
+        if ($this->session_id == false) {
             $this->authenticate();
         }
 
-        if ($this->error == self::ERR_NONE)
-        {
+        if ($this->error == self::ERR_NONE) {
             $message = urlencode($message);
-            $url = self::BASEURL.'/http/sendmsg?session_id='.$this->session_id
-                . '&to='.$to.'&text='.$message.'&from='.$this->from_no.'&MO=1';
+            $url = self::BASEURL . '/http/sendmsg?session_id=' . $this->session_id
+                . '&to=' . $to . '&text=' . $message . '&from=' . $this->from_no . '&MO=1';
 
             $result = $this->_do_api_call($url);
-            $result = explode(':',$result);
+            $result = explode(':', $result);
 
-            if ($result[0] == 'ID')
-            {
+            if ($result[0] == 'ID') {
                 $api_message_id = $result[1];
                 return $api_message_id;
-            }
-            else
-            {
+            } else {
                 $this->error = self::ERR_SEND_MESSAGE_FAIL;
                 $this->error_message = $result[0];
-                return FALSE;
+                return false;
             }
-        }
-        else
-        {
-            return FALSE;
+        } else {
+            return false;
         }
     }
-    
-    
+
     public function get_balance()
     {
-        if ($this->session_id == FALSE)
-        {
+        if ($this->session_id == false) {
             $this->authenticate();
         }
 
-        if ($this->error == self::ERR_NONE)
-        {
-            $url = self::BASEURL.'/http/getbalance?session_id='.$this->session_id;
-            
+        if ($this->error == self::ERR_NONE) {
+            $url = self::BASEURL . '/http/getbalance?session_id=' . $this->session_id;
+
             $result = $this->_do_api_call($url);
-            $result = explode(':',$result);
-            
-            if ($result[0] == 'Credit')
-            {
-                return (float)$result[1];
-            }
-            else
-            {
+            $result = explode(':', $result);
+
+            if ($result[0] == 'Credit') {
+                return (float) $result[1];
+            } else {
                 $this->error = self::ERR_CALL_FAIL;
                 $this->error_message = $result[0];
-                return FALSE;
+                return false;
             }
-        }       
+        }
     }
-    
+
     /**
      * Method to send a ping to keep session live
      *
@@ -149,32 +137,26 @@ class Clickatell
      */
     public function ping()
     {
-        if ($this->session_id == FALSE)
-        {
+        if ($this->session_id == false) {
             $this->authenticate();
         }
 
-        if ($this->error == self::ERR_NONE)
-        {
-            $url = self::BASEURL.'/http/ping?session_id='.$this->session_id;
-            
+        if ($this->error == self::ERR_NONE) {
+            $url = self::BASEURL . '/http/ping?session_id=' . $this->session_id;
+
             $result = $this->_do_api_call($url);
-            $result = explode(':',$result);
-            
-            if ($result[0] == 'OK')
-            {
-                return TRUE;
-            }
-            else
-            {
+            $result = explode(':', $result);
+
+            if ($result[0] == 'OK') {
+                return true;
+            } else {
                 $this->error = self::ERR_PING_FAIL;
                 $this->error_message = $result[0];
-                return FALSE;
+                return false;
             }
         }
     }
-    
-    
+
     /**
      * Method to call HTTP url - to be expanded
      *
@@ -184,7 +166,7 @@ class Clickatell
     private function _do_api_call($url)
     {
         $result = file($url);
-        $result = implode("\n",$result);
+        $result = implode("\n", $result);
         return $result;
     }
 }

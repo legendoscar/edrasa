@@ -168,5 +168,4 @@ class Sendsmsmail_model extends CI_Model
             }
         }
     }
-
 }

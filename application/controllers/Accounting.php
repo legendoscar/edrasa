@@ -283,7 +283,6 @@ class Accounting extends Admin_Controller
                 //save data into table
                 $insert_id = $this->accounting_model->saveVoucher($post);
                 if (isset($_FILES["attachment_file"]) && !empty($_FILES['attachment_file']['name'])) {
-                    Console::info('b4');
                     $config = [];
                     $config['allowed_types'] = '*';
                     // $config['max_size'] = '2040';

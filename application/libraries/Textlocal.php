@@ -39,24 +39,25 @@ class Textlocal
 	 */
 	function __construct()
 	{
-		 
-        $ci = & get_instance();
-        $apiKey = false;
-        if (is_superadmin_loggedin()) {
-            $branchID = $ci->input->post('branch_id');
-        } else {
-            $branchID = get_loggedin_branch_id();
-        }
-        $textlocal = $ci->db->get_where('sms_credential', array('sms_api_id' => 5, 'branch_id' => $branchID))->row_array();
 
-		//$username, $hash, $apiKey = false
-		$this->username 		= $textlocal['field_one'];
-		$this->hash 			= $textlocal['field_three'];
-		$this->sender_number 	= $textlocal['field_two'];
+		$ci = &get_instance();
+		$apiKey = false;
+		if (is_superadmin_loggedin()) {
+			$branchID = $ci->input->post('branch_id');
+		} else {
+			$branchID = get_loggedin_branch_id();
+		}
+		$textlocal = $ci->db->get_where('sms_credential', array('sms_api_id' => 5, 'branch_id' => $branchID))->row_array();
+
+		if ($textlocal) {	//$username, $hash, $apiKey = false
+			$this->username 		= $textlocal['field_one'];
+			$this->hash 			= $textlocal['field_three'];
+			$this->sender_number 	= $textlocal['field_two'];
 
 
-		if ($apiKey) {
-			$this->apiKey = $apiKey;
+			if ($apiKey) {
+				$this->apiKey = $apiKey;
+			}
 		}
 	}
 
@@ -72,7 +73,6 @@ class Textlocal
 	{
 		if ($this->apiKey && !empty($this->apiKey)) {
 			$params['apiKey'] = $this->apiKey;
-
 		} else {
 			$params['hash'] = $this->hash;
 		}
@@ -450,8 +450,7 @@ class Textlocal
 		// JSON & URL-encode array
 		$contacts = urlencode(json_encode($contacts));
 
-		$params = array
-		("group_id" => $groupid, "contacts" => $contacts);
+		$params = array("group_id" => $groupid, "contacts" => $contacts);
 		return $this->_sendRequest('create_contacts_bulk', $params);
 	}
 
@@ -521,14 +520,14 @@ class Textlocal
 	 * @param $inbox
 	 * @return array|bool|mixed
 	 */
-	public function getMessages($inbox,$min,$max)
+	public function getMessages($inbox, $min, $max)
 	{
 		if (!isset($inbox)) return false;
-		$options = array('inbox_id' => $inbox,'min_time'=>$min,'max_time'=>$max);
+		$options = array('inbox_id' => $inbox, 'min_time' => $min, 'max_time' => $max);
 		return $this->_sendRequest('get_messages', $options);
 	}
 
-/*public function getMessages($inbox)
+	/*public function getMessages($inbox)
 	{
 		if (!isset($inbox)) return false;
 		$options = array('inbox_id' => $inbox);
@@ -686,9 +685,7 @@ class Textlocal
 	{
 		return $this->_sendRequest('get_optouts');
 	}
-}
-
-;
+};
 
 class Contact
 {
@@ -719,9 +716,7 @@ class Contact
 		$this->custom2 = $custom2;
 		$this->custom3 = $custom3;
 	}
-}
-
-;
+};
 
 /**
  * If the json_encode function does not exist, then create it..
