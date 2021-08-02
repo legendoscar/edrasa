@@ -272,7 +272,7 @@ $this->db->delete('custom_fields_values');
 						</div>
 					</div>
 				</div>
-				<div class="<?=$getBranch['stu_generate'] == 1 || $getBranch['stu_generate'] == "" ? 'hidden-div' : '' ?>" id="stuLogin">
+				<div class="<?=isset($getBranch['stu_generate']) == 1 || isset($getBranch['stu_generate']) == "" ? 'hidden-div' : '' ?>" id="stuLogin">
 					<!-- login details -->
 					<div class="headers-line mt-md">
 						<i class="fas fa-user-lock"></i> <?=translate('login_details')?>
@@ -434,7 +434,7 @@ $this->db->delete('custom_fields_values');
 							</div>
 						</div>
 					</div>
-					<div class="<?=$getBranch['grd_generate'] == 1 || $getBranch['grd_generate'] == "" ? 'hidden-div' : ''?>" id="grdLogin">
+					<div class="<?=isset($getBranch['grd_generate']) == 1 || isset($getBranch['grd_generate']) == "" ? 'hidden-div' : ''?>" id="grdLogin">
 						<div class="row mb-lg">
 							<div class="col-md-6 mb-sm">
 								<div class="form-group">
