@@ -116,12 +116,24 @@
 								<th><?=translate('register_no')?></th>
 								<th><?=translate('roll')?></th>
 								<th>IsAbsent</th>
-							<?php
-							$distributions = json_decode($timetable_detail['mark_distribution'], true);
-							foreach ($distributions as $i => $value) {
-								?>
-								<th><?php echo get_type_name_by_id('exam_mark_distribution', $i) . " (" . $value['full_mark'] . ")" ?></th>
-							<?php } ?>
+									<?php
+										$distributions = json_decode($timetable_detail['mark_distribution'], true);
+										foreach ($distributions as $i => $value) {
+									?>
+									<?php
+										$columns = explode(',', $exam_columns['column_name']);
+
+										foreach ($columns as $column){
+									?>
+									<th >
+										<?= $column?>
+									</th>
+									<?php
+										}
+									?>
+									<?php 
+										} 
+									?>
 							</tr>
 						</thead>
 						<tbody>
@@ -135,20 +147,34 @@
 								<td><?php echo $row['roll']; ?></td>
 								<td>
 									<div class="checkbox-replace"> 
-										<label class="i-checks"><input type="checkbox" name="mark[<?=$key?>][absent]" <?=($row['get_abs'] == 'on' ? 'checked' : ''); ?>><i></i></label>
+										<label class="i-checks">
+											<input type="checkbox" name="mark[<?=$key?>][absent]" <?=($row['get_abs'] == 'on' ? 'checked' : ''); ?> >
+											<i></i>
+										</label>
 									</div>
 								</td>
 								<?php
-								$getDetails = json_decode($row['get_mark'], true);
-								foreach ($distributions as $id => $ass) {
+									$getDetails = json_decode($row['get_mark'], true);
+								
+									foreach ($distributions as $id => $ass) {
 									$existMark = isset($getDetails[$id]) ? $getDetails[$id]  : '';
+								?>
+									<?php
+										$columns = explode(',', $exam_columns['column_name']);
+
+										foreach ($columns as $column){
+										
 									?>
-								<td class="min-w-sm">
-									<div class="form-group">
-										<input type="text" class="form-control" autocomplete="off" name="mark[<?=$key?>][assessment][<?=$id?>]" value="<?=$existMark?>">
-										<span class="error"></span>
-									</div>
-								</td>
+									<td class="min-w-sm">
+										
+										<div class="form-group">
+											<input type="text" class="form-control" autocomplete="off"  name="column[<?=$key?>][<?=trim($column); ?>]" value="<?=$existMark?>" required >
+											<span class="error"></span>
+										</div> 
+									</td>
+								<?php
+										}
+									?>
 								<?php } ?>
 							</tr>
 							<?php endforeach; ?>
