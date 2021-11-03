@@ -546,7 +546,11 @@ CREATE TABLE `exam_columns` (
   `id` int NOT NULL,
   `branch_id` varchar(225) NOT NULL,
   `column_name` varchar(225) NOT NULL
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 
 --
 -- Dumping data for table `exam_columns`

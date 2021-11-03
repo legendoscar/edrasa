@@ -9,15 +9,23 @@
 			<div class="panel-body">
 				<div class="row mb-sm">
 					<?php if (is_superadmin_loggedin()) : ?>
+<<<<<<< HEAD
 					<div class="col-md-2 mb-sm">
 						<div class="form-group">
 							<label class="control-label"><?= translate('branch') ?> <span
 									class="required">*</span></label>
 							<?php
+=======
+						<div class="col-md-2 mb-sm">
+							<div class="form-group">
+								<label class="control-label"><?= translate('branch') ?> <span class="required">*</span></label>
+								<?php
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 								$arrayBranch = $this->app_lib->getSelectList('branch');
 								echo form_dropdown("branch_id", $arrayBranch, set_value('branch_id'), "class='form-control' id='branch_id'
 								data-plugin-selectTwo data-width='100%' data-minimum-results-for-search='Infinity'");
 								?>
+<<<<<<< HEAD
 						</div>
 					</div>
 					<?php endif; ?>
@@ -25,6 +33,14 @@
 						<div class="form-group">
 							<label class="control-label"><?= translate('exam') ?> <span
 									class="required">*</span></label>
+=======
+							</div>
+						</div>
+					<?php endif; ?>
+					<div class="col-md-<?php echo $widget; ?> mb-sm">
+						<div class="form-group">
+							<label class="control-label"><?= translate('exam') ?> <span class="required">*</span></label>
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 							<?php
 							if (isset($branch_id)) {
 								$arrayExam = array("" => translate('select'));
@@ -42,8 +58,12 @@
 					</div>
 					<div class="col-md-3 mb-sm">
 						<div class="form-group">
+<<<<<<< HEAD
 							<label class="control-label"><?= translate('class') ?> <span
 									class="required">*</span></label>
+=======
+							<label class="control-label"><?= translate('class') ?> <span class="required">*</span></label>
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 							<?php
 							$arrayClass = $this->app_lib->getClass($branch_id);
 							echo form_dropdown("class_id", $arrayClass, set_value('class_id'), "class='form-control' id='class_id' onchange='getSectionByClass(this.value,0)'
@@ -53,8 +73,12 @@
 					</div>
 					<div class="col-md-<?php echo $widget; ?> mb-sm">
 						<div class="form-group">
+<<<<<<< HEAD
 							<label class="control-label"><?= translate('section') ?> <span
 									class="required">*</span></label>
+=======
+							<label class="control-label"><?= translate('section') ?> <span class="required">*</span></label>
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 							<?php
 							$arraySection = $this->app_lib->getSections(set_value('class_id'), false);
 							echo form_dropdown("section_id", $arraySection, set_value('section_id'), "class='form-control' id='section_id' required
@@ -64,8 +88,12 @@
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
+<<<<<<< HEAD
 							<label class="control-label"><?= translate('subject') ?> <span
 									class="required">*</span></label>
+=======
+							<label class="control-label"><?= translate('subject') ?> <span class="required">*</span></label>
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 							<?php
 							if (!empty(set_value('class_id'))) {
 								$arraySubject = array("" => translate('select'));
@@ -86,8 +114,12 @@
 			<footer class="panel-footer">
 				<div class="row">
 					<div class="col-md-offset-10 col-md-2">
+<<<<<<< HEAD
 						<button type="submit" name="search" value="1" class="btn btn btn-default btn-block"> <i
 								class="fas fa-filter"></i> <?= translate('filter') ?></button>
+=======
+						<button type="submit" name="search" value="1" class="btn btn btn-default btn-block"> <i class="fas fa-filter"></i> <?= translate('filter') ?></button>
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 					</div>
 				</div>
 			</footer>
@@ -95,9 +127,14 @@
 		</section>
 
 		<?php if (isset($student)) : ?>
+<<<<<<< HEAD
 		<section class="panel appear-animation" data-appear-animation="<?php echo $global_config['animations']; ?>"
 			data-appear-animation-delay="100">
 			<?php echo form_open('exam/mark_save', array('class' => 'frm-submit-msg'));
+=======
+			<section class="panel appear-animation" data-appear-animation="<?php echo $global_config['animations']; ?>" data-appear-animation-delay="100">
+				<?php echo form_open('exam/mark_save', array('class' => 'frm-submit-msg'));
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 				$data = array(
 					'class_id' => $class_id,
 					'section_id' => $section_id,
@@ -108,6 +145,7 @@
 				);
 				echo form_hidden($data);
 				?>
+<<<<<<< HEAD
 			<header class="panel-heading">
 				<h4 class="panel-title"><i class="fas fa-users"></i> <?= translate('mark_entries') ?></h4>
 			</header>
@@ -128,10 +166,33 @@
 										foreach ($distributions as $i => $value) {
 										?>
 								<?php
+=======
+				<header class="panel-heading">
+					<h4 class="panel-title"><i class="fas fa-users"></i> <?= translate('mark_entries') ?></h4>
+				</header>
+				<div class="panel-body">
+					<?php if (count($student) && count($timetable_detail)) { ?>
+						<div class="table-responsive mt-md mb-lg">
+							<table class="table table-bordered table-condensed mb-none">
+								<thead>
+									<tr>
+										<th><?= translate('sl') ?></th>
+										<th><?= translate('student_name') ?></th>
+										<th><?= translate('category') ?></th>
+										<th><?= translate('register_no') ?></th>
+										<th><?= translate('roll') ?></th>
+										<th>IsAbsent</th>
+										<?php
+										$distributions = json_decode($timetable_detail['mark_distribution'], true);
+										foreach ($distributions as $i => $value) {
+										?>
+											<?php
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 											$columns = explode(',', $exam_columns['column_name']);
 
 											foreach ($columns as $column) {
 											?>
+<<<<<<< HEAD
 								<th>
 									<?= $column ?>
 								</th>
@@ -208,20 +269,103 @@
 			</div>
 			<?php echo form_close(); ?>
 		</section>
+=======
+												<th>
+													<?= $column ?>
+												</th>
+											<?php
+											}
+											?>
+										<?php
+										}
+										?>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $count = 1;
+									foreach ($student as $key => $row) : ?>
+										<tr>
+											<input type="hidden" name="mark[<?= $key ?>][student_id]" value="<?= $row['student_id'] ?>">
+											<td><?php echo $count++; ?></td>
+											<td><?php echo $row['first_name'] . ' ' . $row['last_name']; ?></td>
+											<td><?php echo get_type_name_by_id('student_category', $row['category_id']); ?></td>
+											<td><?php echo $row['register_no']; ?></td>
+											<td><?php echo $row['roll']; ?></td>
+											<td>
+												<div class="checkbox-replace">
+													<label class="i-checks">
+														<input type="checkbox" name="mark[<?= $key ?>][absent]" <?= ($row['get_abs'] == 'on' ? 'checked' : ''); ?>>
+														<i></i>
+													</label>
+												</div>
+											</td>
+											<?php
+											$getDetails = json_decode($row['get_mark'], true);
+
+											foreach ($distributions as $id => $ass) {
+												$existMark = isset($getDetails[$id]) ? $getDetails[$id]  : '';
+											?>
+												<?php
+												$columns = explode(',', $exam_columns['column_name']);
+
+												foreach ($columns as $column) {
+
+												?>
+													<td class="min-w-sm">
+
+														<div class="form-group">
+															<input type="text" class="form-control" autocomplete="off" name="column[<?= $key ?>][<?= trim($column); ?>]" value="<?= json_decode($marks[$key]['mark'], true)[trim($column)] ?>" required>
+															<span class="error"></span>
+														</div>
+													</td>
+												<?php
+												}
+												?>
+											<?php } ?>
+										</tr>
+									<?php endforeach; ?>
+								</tbody>
+							</table>
+						</div>
+					<?php } else {
+						echo '<div class="alert alert-subl mt-md text-center">' . translate('no_information_available') . '</div>';
+					} ?>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<div class="col-md-offset-10 col-md-2">
+							<button type="submit" class="btn btn-default btn-block" data-loading-text="<i class='fas fa-spinner fa-spin'></i> Processing">
+								<i class="fas fa-plus-circle"></i> <?= translate('save') ?>
+							</button>
+						</div>
+					</div>
+				</div>
+				<?php echo form_close(); ?>
+			</section>
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 		<?php endif; ?>
 	</div>
 </div>
 
 <script type="text/javascript">
+<<<<<<< HEAD
 	$(document).ready(function () {
 		$('#branch_id').on('change', function () {
+=======
+	$(document).ready(function() {
+		$('#branch_id').on('change', function() {
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 			var branchID = $(this).val();
 			getClassByBranch(branchID);
 			getExamByBranch(branchID);
 			$('#subject_id').html('').append('<option value=""><?= translate("select") ?></option>');
 		});
 
+<<<<<<< HEAD
 		$('#section_id').on('change', function () {
+=======
+		$('#section_id').on('change', function() {
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 			var classID = $('#class_id').val();
 			var sectionID = $(this).val();
 			$.ajax({
@@ -231,7 +375,11 @@
 					classID: classID,
 					sectionID: sectionID
 				},
+<<<<<<< HEAD
 				success: function (data) {
+=======
+				success: function(data) {
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 					$('#subject_id').html(data);
 				}
 			});
