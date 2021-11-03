@@ -144,6 +144,19 @@ class Setting extends Admin_Controller {
                     'branch_id' => $branchID,
                     'column_name' => $this->input->post( 'column_name' ),
                 );
+        
+                $columns = explode(',', $this->input->post( 'column_name' ));
+
+                $mark_columns = array();
+
+                foreach ($columns as $value) {
+                    $mark_columns[$value] = "";
+                }
+               
+                $exam_column_object = [
+                   'branch_id' => $branchID,
+                   'mark' => json_encode($mark_columns),
+                ];
 
                 // update all information in the database
                 $this->db->where( array( 'branch_id' => $branchID ) );
@@ -155,6 +168,15 @@ class Setting extends Admin_Controller {
                     $this->db->insert( 'exam_columns', $exam_column );
                 }
 
+                $this->db->where( array( 'branch_id' => $branchID ) );
+                $get = $this->db->get( 'mark' );
+                if ( $get->num_rows() > 0 ) {
+                    $this->db->where( 'id', $get->row()->id );
+                    $this->db->update( 'mark', $exam_column_object );
+                } else {
+                    $this->db->insert( 'mark', $exam_column_object );
+                }
+
                 set_alert( 'success', translate( 'information_has_been_saved_successfully' ) );
                 $array = array( 'status' => 'success' );
 
@@ -162,8 +184,9 @@ class Setting extends Admin_Controller {
                 $error = $this->form_validation->error_array();
                 $array = array( 'status' => 'fail', 'error' => $error );
             }
-
+            // Console::log(json_encode($mark_columns));
             echo json_encode( $array );
+            
 
         }
 
