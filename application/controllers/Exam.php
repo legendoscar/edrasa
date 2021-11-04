@@ -629,8 +629,4 @@ class Exam extends Admin_Controller
         }
         echo $html;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
