@@ -7,7 +7,7 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-<!-- PROJECT LOGO -->
+<!-- product LOGO -->
 <!-- <br /> -->
 <div align="center">
   <a href="https://github.com/legendoscar/losinsms">
@@ -47,12 +47,12 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contributors">Contributors</a></li>
+    <li><a href="#acknowldgements">Acknowldgements</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -61,9 +61,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](http://losin-sms.herokuapp.com/)
-
-Our Vision is *Rapidly Accelerate the creation and adoption of world-class education technology for school automation.*
+Our Vision is *to Rapidly Accelerate the Creation and Adoption of world-class Education Technology for School Automation.*
 
 There are many great School Management Software available in the market today; however, we can't find one that really automate activities in schools so we created this innovative solution. We want to create a software so amazing that it'll be the last one schools ever need -- I think this is it.
 
@@ -80,7 +78,7 @@ Of course, no one software will serve all schools since their needs may be diffe
 
 ### Built With
 
-This section lists the tchnologies used for this project:
+This section lists the tchnologies used for this product:
 
 * [CodeIgniter PHP Framework](https://codeigniter.com/)
 * [Bootstrap](https://getbootstrap.com)
@@ -90,20 +88,19 @@ This section lists the tchnologies used for this project:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+<!-- GETTING STARTED -->
+## Getting Started
 
-<!-- CONTRIBUTING -->
-## Contributing
+You can get started with a local copy up and running, follow these simple example steps:
 
-Contributions are what make the tech community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+### Prerequisites
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Please see the <a href="https://codeigniter.com/user_guide/intro/requirements.html">server requirments section</a>  of the CodeIgniter User Guide.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+
+### Installation
+
+Please see the <a href="http://codeigniter.com/userguide3/installation/index.html">installation section</a>  of the CodeIgniter User Guide.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -118,25 +115,31 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 
-<!-- CONTACT -->
-## Contact
+<!-- RESOURCES -->
+## Resources
 
-Team LosinSMS - [@losinsms](https://twitter.com/losinsms) - losinsms@gmail.com
-
-Project Link: [https://github.com/legendoscar/losinsms](https://github.com/legendoscar/losinsms)
+* [User Guide](https://codeigniter.com/userguide3/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- CONTRIBUTING -->
+## Contributing
 
-Here is a list of resources we find helpful and would like to give credit to. 
+Contributions are what make the tech community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-* [Font Awesome](https://fontawesome.com)
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the product a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 <!-- CONTRIBUTORS -->
@@ -145,8 +148,31 @@ Here is a list of resources we find helpful and would like to give credit to.
 Here is a list of contributors to this project and their github accounts:
 
 * [Onuoha Oscar](https://github.com/legendoscar)
-* [Nnamocha Claret](https://github.com/devclareo)
+* [Nnamocha Claret](https://github.com/claretnnamocha)
 * [Dike Pascal](https://github.com/officialozioma)
-* [Ogbonna Joshua](https://github.com/devjaykes)
+* [Ogbonna Joshua](https://github.com/joshua-ogbonna)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowldgements
+
+
+The LosinSMS Team would like to thank all the contributors to the product.
+
+This repository is maintained by Onuoha Oscar, Product Lead.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Team LosinSMS - [@losinsms](https://twitter.com/losinsms) - losinsms@gmail.com
+
+Project Link: [https://github.com/legendoscar/losinsms](https://github.com/legendoscar/losinsms)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
