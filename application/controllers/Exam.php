@@ -370,7 +370,7 @@ class Exam extends Admin_Controller
         $this->data['section_id'] = $sectionID;
         $this->data['subject_id'] = $subjectID;
         $this->data['exam_id'] = $examID;
-        if (isset($_POST['search'])) {
+        if (isset($_POST['search'])) { 
 
             $this->data['timetable_detail'] = $this->exam_model->getTimetableDetail($classID, $sectionID, $examID, $subjectID);
 
@@ -381,6 +381,7 @@ class Exam extends Admin_Controller
             $this->data['marks'] = $this->exam_model->get('mark', array('branch_id' => $branchID, 'class_id' => $classID, 'section_id' => $sectionID, 'subject_id' => $subjectID, 'exam_id' => $examID)) ?? '';
 
             Console::log($this->data['marks']);
+            
         }
 
         $this->data['sub_page'] = 'exam/marks_register';
@@ -628,4 +629,8 @@ class Exam extends Admin_Controller
         }
         echo $html;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
