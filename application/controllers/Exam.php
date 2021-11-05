@@ -16,7 +16,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Exam extends Admin_Controller
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -28,11 +27,27 @@ class Exam extends Admin_Controller
     protected function exam_validation()
     {
         if (is_superadmin_loggedin()) {
-            $this->form_validation->set_rules('branch_id', translate('branch'), 'required');
+            $this->form_validation->set_rules(
+                'branch_id',
+                translate('branch'),
+                'required'
+            );
         }
-        $this->form_validation->set_rules('name', translate('name'), 'trim|required');
-        $this->form_validation->set_rules('type_id', translate('exam_type'), 'trim|required');
-        $this->form_validation->set_rules('mark_distribution[]', translate('mark_distribution'), 'trim|required');
+        $this->form_validation->set_rules(
+            'name',
+            translate('name'),
+            'trim|required'
+        );
+        $this->form_validation->set_rules(
+            'type_id',
+            translate('exam_type'),
+            'trim|required'
+        );
+        $this->form_validation->set_rules(
+            'mark_distribution[]',
+            translate('mark_distribution'),
+            'trim|required'
+        );
     }
 
     public function index()
@@ -50,12 +65,15 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 $post = $this->input->post();
                 $this->exam_model->exam_save($post);
-                set_alert('success', translate('information_has_been_saved_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_saved_successfully')
+                );
                 $url = base_url('exam');
-                $array = array('status' => 'success', 'url' => $url);
+                $array = ['status' => 'success', 'url' => $url];
             } else {
                 $error = $this->form_validation->error_array();
-                $array = array('status' => 'fail', 'error' => $error);
+                $array = ['status' => 'fail', 'error' => $error];
             }
             echo json_encode($array);
             exit();
@@ -80,19 +98,26 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 $post = $this->input->post();
                 $this->exam_model->exam_save($post);
-                set_alert('success', translate('information_has_been_saved_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_saved_successfully')
+                );
                 $url = base_url('exam');
-                $array = array('status' => 'success', 'url' => $url);
+                $array = ['status' => 'success', 'url' => $url];
             } else {
                 $error = $this->form_validation->error_array();
-                $array = array('status' => 'fail', 'error' => $error);
+                $array = ['status' => 'fail', 'error' => $error];
             }
             echo json_encode($array);
             exit();
         }
 
         $this->data['branch_id'] = $this->application_model->get_branch_id();
-        $this->data['exam'] = $this->app_lib->getTable('exam', array('t.id' => $id), true);
+        $this->data['exam'] = $this->app_lib->getTable(
+            'exam',
+            ['t.id' => $id],
+            true
+        );
         $this->data['title'] = translate('exam_list');
         $this->data['sub_page'] = 'exam/edit';
         $this->data['main_menu'] = 'exam';
@@ -117,9 +142,17 @@ class Exam extends Admin_Controller
     protected function term_validation()
     {
         if (is_superadmin_loggedin()) {
-            $this->form_validation->set_rules('branch_id', translate('branch'), 'required');
+            $this->form_validation->set_rules(
+                'branch_id',
+                translate('branch'),
+                'required'
+            );
         }
-        $this->form_validation->set_rules('term_name', translate('name'), 'trim|required|callback_unique_term');
+        $this->form_validation->set_rules(
+            'term_name',
+            translate('name'),
+            'trim|required|callback_unique_term'
+        );
     }
 
     // exam term information are prepared and stored in the database here
@@ -134,7 +167,10 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 //save exam term information in the database file
                 $this->exam_model->termSave($this->input->post());
-                set_alert('success', translate('information_has_been_saved_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_saved_successfully')
+                );
                 redirect(current_url());
             }
         }
@@ -155,12 +191,15 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 //save exam term information in the database file
                 $this->exam_model->termSave($this->input->post());
-                set_alert('success', translate('information_has_been_updated_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_updated_successfully')
+                );
                 $url = base_url('exam/term');
-                $array = array('status' => 'success', 'url' => $url, 'error' => '');
+                $array = ['status' => 'success', 'url' => $url, 'error' => ''];
             } else {
                 $error = $this->form_validation->error_array();
-                $array = array('status' => 'fail', 'url' => '', 'error' => $error);
+                $array = ['status' => 'fail', 'url' => '', 'error' => $error];
             }
             echo json_encode($array);
         }
@@ -187,12 +226,15 @@ class Exam extends Admin_Controller
         if (!empty($term_id)) {
             $this->db->where_not_in('id', $term_id);
         }
-        $this->db->where(array('name' => $name, 'branch_id' => $branchID));
+        $this->db->where(['name' => $name, 'branch_id' => $branchID]);
         $uniform_row = $this->db->get('exam_term')->num_rows();
         if ($uniform_row == 0) {
             return true;
         } else {
-            $this->form_validation->set_message('unique_term', translate('already_taken'));
+            $this->form_validation->set_message(
+                'unique_term',
+                translate('already_taken')
+            );
             return false;
         }
     }
@@ -204,21 +246,34 @@ class Exam extends Admin_Controller
                 access_denied();
             }
             if (is_superadmin_loggedin()) {
-                $this->form_validation->set_rules('branch_id', translate('branch'), 'required');
+                $this->form_validation->set_rules(
+                    'branch_id',
+                    translate('branch'),
+                    'required'
+                );
             }
-            $this->form_validation->set_rules('name', translate('name'), 'trim|required');
+            $this->form_validation->set_rules(
+                'name',
+                translate('name'),
+                'trim|required'
+            );
             if ($this->form_validation->run() !== false) {
                 // save mark distribution information in the database file
-                $arrayDistribution = array(
+                $arrayDistribution = [
                     'name' => $this->input->post('name'),
                     'branch_id' => $this->application_model->get_branch_id(),
-                );
+                ];
                 $this->db->insert('exam_mark_distribution', $arrayDistribution);
-                set_alert('success', translate('information_has_been_saved_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_saved_successfully')
+                );
                 redirect(current_url());
             }
         }
-        $this->data['termlist'] = $this->app_lib->getTable('exam_mark_distribution');
+        $this->data['termlist'] = $this->app_lib->getTable(
+            'exam_mark_distribution'
+        );
         $this->data['sub_page'] = 'exam/mark_distribution';
         $this->data['main_menu'] = 'exam';
         $this->data['title'] = translate('mark_distribution');
@@ -232,23 +287,34 @@ class Exam extends Admin_Controller
                 ajax_access_denied();
             }
             if (is_superadmin_loggedin()) {
-                $this->form_validation->set_rules('branch_id', translate('branch'), 'required');
+                $this->form_validation->set_rules(
+                    'branch_id',
+                    translate('branch'),
+                    'required'
+                );
             }
-            $this->form_validation->set_rules('name', translate('name'), 'trim|required');
+            $this->form_validation->set_rules(
+                'name',
+                translate('name'),
+                'trim|required'
+            );
             if ($this->form_validation->run() !== false) {
                 // save mark distribution information in the database file
-                $arrayDistribution = array(
+                $arrayDistribution = [
                     'name' => $this->input->post('name'),
                     'branch_id' => $this->application_model->get_branch_id(),
-                );
+                ];
                 $this->db->where('id', $this->input->post('distribution_id'));
                 $this->db->update('exam_mark_distribution', $arrayDistribution);
-                set_alert('success', translate('information_has_been_updated_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_updated_successfully')
+                );
                 $url = base_url('exam/mark_distribution');
-                $array = array('status' => 'success', 'url' => $url);
+                $array = ['status' => 'success', 'url' => $url];
             } else {
                 $error = $this->form_validation->error_array();
-                $array = array('status' => 'fail', 'error' => $error);
+                $array = ['status' => 'fail', 'error' => $error];
             }
             echo json_encode($array);
         }
@@ -270,10 +336,22 @@ class Exam extends Admin_Controller
     protected function hall_validation()
     {
         if (is_superadmin_loggedin()) {
-            $this->form_validation->set_rules('branch_id', translate('branch'), 'required');
+            $this->form_validation->set_rules(
+                'branch_id',
+                translate('branch'),
+                'required'
+            );
         }
-        $this->form_validation->set_rules('hall_no', translate('hall_no'), 'trim|required|callback_unique_hall_no');
-        $this->form_validation->set_rules('no_of_seats', translate('no_of_seats'), 'trim|required|numeric');
+        $this->form_validation->set_rules(
+            'hall_no',
+            translate('hall_no'),
+            'trim|required|callback_unique_hall_no'
+        );
+        $this->form_validation->set_rules(
+            'no_of_seats',
+            translate('no_of_seats'),
+            'trim|required|numeric'
+        );
     }
 
     /* exam hall information moderator and page */
@@ -288,7 +366,10 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 //save exam hall information in the database file
                 $this->exam_model->hallSave($this->input->post());
-                set_alert('success', translate('information_has_been_saved_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_saved_successfully')
+                );
                 redirect(current_url());
             }
         }
@@ -309,12 +390,15 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 //save exam hall information in the database file
                 $this->exam_model->hallSave($this->input->post());
-                set_alert('success', translate('information_has_been_updated_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_updated_successfully')
+                );
                 $url = base_url('exam/hall');
-                $array = array('status' => 'success', 'url' => $url);
+                $array = ['status' => 'success', 'url' => $url];
             } else {
                 $error = $this->form_validation->error_array();
-                $array = array('status' => 'fail', 'error' => $error);
+                $array = ['status' => 'fail', 'error' => $error];
             }
             echo json_encode($array);
         }
@@ -341,12 +425,15 @@ class Exam extends Admin_Controller
         if (!empty($term_id)) {
             $this->db->where_not_in('id', $term_id);
         }
-        $this->db->where(array('hall_no' => $hall_no, 'branch_id' => $branchID));
+        $this->db->where(['hall_no' => $hall_no, 'branch_id' => $branchID]);
         $uniform_row = $this->db->get('exam_hall')->num_rows();
         if ($uniform_row == 0) {
             return true;
         } else {
-            $this->form_validation->set_message('unique_hall_no', translate('already_taken'));
+            $this->form_validation->set_message(
+                'unique_hall_no',
+                translate('already_taken')
+            );
             return false;
         }
     }
@@ -370,23 +457,49 @@ class Exam extends Admin_Controller
         $this->data['section_id'] = $sectionID;
         $this->data['subject_id'] = $subjectID;
         $this->data['exam_id'] = $examID;
-        if (isset($_POST['search'])) { 
+        if (isset($_POST['search'])) {
+            $this->data[
+                'timetable_detail'
+            ] = $this->exam_model->getTimetableDetail(
+                $classID,
+                $sectionID,
+                $examID,
+                $subjectID
+            );
 
-            $this->data['timetable_detail'] = $this->exam_model->getTimetableDetail($classID, $sectionID, $examID, $subjectID);
+            $this->data['student'] = $this->exam_model->getMarkAndStudent(
+                $branchID,
+                $classID,
+                $sectionID,
+                $examID,
+                $subjectID
+            );
 
-            $this->data['student'] = $this->exam_model->getMarkAndStudent($branchID, $classID, $sectionID, $examID, $subjectID);
+            $this->data['exam_columns'] =
+                $this->exam_model->get(
+                    'exam_columns',
+                    ['branch_id' => $branchID],
+                    true
+                ) ?? '';
 
-            $this->data['exam_columns'] = $this->exam_model->get('exam_columns', array('branch_id' => $branchID), true) ?? '';
+            $this->data['marks'] =
+                $this->exam_model->get('mark', [
+                    'branch_id' => $branchID,
+                    'class_id' => $classID,
+                    'section_id' => $sectionID,
+                    'subject_id' => $subjectID,
+                    'exam_id' => $examID,
+                ]) ?? '';
 
-            $this->data['marks'] = $this->exam_model->get('mark', array('branch_id' => $branchID, 'class_id' => $classID, 'section_id' => $sectionID, 'subject_id' => $subjectID, 'exam_id' => $examID)) ?? '';
-
-            Console::log($this->data['marks']);
-            
+            // Console::log($this->data['marks']);
         }
 
         $this->data['sub_page'] = 'exam/marks_register';
         $this->data['main_menu'] = 'mark';
         $this->data['title'] = translate('mark_entries');
+        // echo "<pre>";
+        // var_dump($this->data);
+        // echo "</pre>";
         $this->load->view('layout/index', $this->data);
     }
 
@@ -404,10 +517,14 @@ class Exam extends Admin_Controller
                 $column = $inputColumns[$key];
                 if (!isset($value['absent'])) {
                     foreach ($column as $i => $row) {
-                        $this->form_validation->set_rules('column[' . $key . '][' . $i . ']', translate('mark'), 'trim|required|numeric');
+                        $this->form_validation->set_rules(
+                            'column[' . $key . '][' . $i . ']',
+                            translate('mark'),
+                            'trim|required|numeric'
+                        );
                         if (!$this->form_validation->run()) {
                             $error = $this->form_validation->error_array();
-                            $array = array('status' => 'fail', 'error' => $error);
+                            $array = ['status' => 'fail', 'error' => $error];
 
                             echo json_encode($array);
                             return;
@@ -423,12 +540,12 @@ class Exam extends Admin_Controller
             // $inputMarks = $this->input->post( 'mark' );
             foreach ($inputMarks as $key => $value) {
                 $column = $inputColumns[$key];
-                $assMark = array();
+                $assMark = [];
                 foreach ($column as $i => $row) {
                     $assMark[$i] = $row;
                 }
 
-                $arrayMarks = array(
+                $arrayMarks = [
                     'student_id' => $value['student_id'],
                     'exam_id' => $examID,
                     'class_id' => $classID,
@@ -436,14 +553,19 @@ class Exam extends Admin_Controller
                     'subject_id' => $subjectID,
                     'branch_id' => $branchID,
                     'session_id' => get_session_id(),
-                );
+                ];
 
-                $inputMark = (isset($value['absent']) ? null : json_encode($assMark));
-                $absent = (isset($value['absent']) ? 'on' : '');
+                $inputMark = isset($value['absent'])
+                    ? null
+                    : json_encode($assMark);
+                $absent = isset($value['absent']) ? 'on' : '';
                 $query = $this->db->get_where('mark', $arrayMarks);
                 if ($query->num_rows() > 0) {
                     $this->db->where('id', $query->row()->id);
-                    $this->db->update('mark', array('mark' => $inputMark, 'absent' => $absent));
+                    $this->db->update('mark', [
+                        'mark' => $inputMark,
+                        'absent' => $absent,
+                    ]);
                 } else {
                     $arrayMarks['mark'] = $inputMark;
                     $arrayMarks['absent'] = $absent;
@@ -453,7 +575,7 @@ class Exam extends Admin_Controller
                 }
             }
 
-            $array = array('status' => 'success', 'message' => 'Marks Updated');
+            $array = ['status' => 'success', 'message' => 'Marks Updated'];
             echo json_encode($array);
         }
     }
@@ -462,12 +584,32 @@ class Exam extends Admin_Controller
     protected function grade_validation()
     {
         if (is_superadmin_loggedin()) {
-            $this->form_validation->set_rules('branch_id', translate('branch'), 'required');
+            $this->form_validation->set_rules(
+                'branch_id',
+                translate('branch'),
+                'required'
+            );
         }
-        $this->form_validation->set_rules('name', translate('name'), 'trim|required');
-        $this->form_validation->set_rules('grade_point', translate('grade_point'), 'trim|required');
-        $this->form_validation->set_rules('lower_mark', translate('mark_from'), 'trim|required');
-        $this->form_validation->set_rules('upper_mark', translate('mark_upto'), 'trim|required');
+        $this->form_validation->set_rules(
+            'name',
+            translate('name'),
+            'trim|required'
+        );
+        $this->form_validation->set_rules(
+            'grade_point',
+            translate('grade_point'),
+            'trim|required'
+        );
+        $this->form_validation->set_rules(
+            'lower_mark',
+            translate('mark_from'),
+            'trim|required'
+        );
+        $this->form_validation->set_rules(
+            'upper_mark',
+            translate('mark_upto'),
+            'trim|required'
+        );
     }
 
     /* exam grade information are prepared and stored in the database here */
@@ -486,12 +628,15 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 $post = $this->input->post();
                 $this->exam_model->gradeSave($post);
-                set_alert('success', translate('information_has_been_saved_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_saved_successfully')
+                );
                 $url = base_url('exam/grade');
-                $array = array('status' => 'success', 'url' => $url);
+                $array = ['status' => 'success', 'url' => $url];
             } else {
                 $error = $this->form_validation->error_array();
-                $array = array('status' => 'fail', 'error' => $error);
+                $array = ['status' => 'fail', 'error' => $error];
             }
             echo json_encode($array);
             exit();
@@ -515,17 +660,24 @@ class Exam extends Admin_Controller
             if ($this->form_validation->run() !== false) {
                 $post = $this->input->post();
                 $this->exam_model->gradeSave($post);
-                set_alert('success', translate('information_has_been_updated_successfully'));
+                set_alert(
+                    'success',
+                    translate('information_has_been_updated_successfully')
+                );
                 $url = base_url('exam/grade');
-                $array = array('status' => 'success', 'url' => $url);
+                $array = ['status' => 'success', 'url' => $url];
             } else {
                 $error = $this->form_validation->error_array();
-                $array = array('status' => 'fail', 'error' => $error);
+                $array = ['status' => 'fail', 'error' => $error];
             }
             echo json_encode($array);
             exit();
         }
-        $this->data['grade'] = $this->app_lib->getTable('grade', array('t.id' => $id), true);
+        $this->data['grade'] = $this->app_lib->getTable(
+            'grade',
+            ['t.id' => $id],
+            true
+        );
         $this->data['sub_page'] = 'exam/grade_edit';
         $this->data['title'] = translate('grades_range');
         $this->data['main_menu'] = 'exam';
@@ -558,13 +710,18 @@ class Exam extends Admin_Controller
             $this->db->from('enroll as e');
             $this->db->join('student as s', 'e.student_id = s.id', 'inner');
             $this->db->join('mark as m', 'm.student_id = s.id', 'inner');
-            $this->db->join('student_category as c', 'c.id = s.category_id', 'left');
+            $this->db->select_max('m.student_id');
+            $this->db->join(
+                'student_category as c',
+                'c.id = s.category_id',
+                'left'
+            );
             $this->db->where('e.session_id', $sessionID);
             $this->db->where('e.class_id', $classID);
             $this->db->where('e.section_id', $sectionID);
             $this->db->where('e.branch_id', $branchID);
             $this->db->where('m.exam_id', $examID);
-            $this->db->group_by('m.student_id');
+            $this->db->group_by('s.name');
             $this->data['student'] = $this->db->get()->result_array();
         }
 
@@ -606,7 +763,12 @@ class Exam extends Admin_Controller
             $sectionID = $this->input->post('section_id');
             $examID = $this->input->post('exam_id');
             $sessionID = $this->input->post('session_id');
-            $this->data['get_subjects'] = $this->exam_model->getSubjectList($examID, $classID, $sectionID, $sessionID);
+            $this->data['get_subjects'] = $this->exam_model->getSubjectList(
+                $examID,
+                $classID,
+                $sectionID,
+                $sessionID
+            );
         }
         $this->data['title'] = translate('tabulation_sheet');
         $this->data['sub_page'] = 'exam/tabulation_sheet';
@@ -620,14 +782,27 @@ class Exam extends Admin_Controller
         $table = $this->input->post('table');
         $branch_id = $this->application_model->get_branch_id();
         if (!empty($branch_id)) {
-            $result = $this->db->select('id,name')->where('branch_id', $branch_id)->get('exam_mark_distribution')->result_array();
+            $result = $this->db
+                ->select('id,name')
+                ->where('branch_id', $branch_id)
+                ->get('exam_mark_distribution')
+                ->result_array();
             if (count($result)) {
                 foreach ($result as $row) {
-                    $html .= '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+                    $html .=
+                        '<option value="' .
+                        $row['id'] .
+                        '">' .
+                        $row['name'] .
+                        '</option>';
                 }
             }
         }
         
         echo $html;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6ce1b73d3f71db988f97632eb3ce7cbea345854b
