@@ -97,7 +97,7 @@ $db['default'] = [
     'stricton' => false,
     'failover' => [],
     'save_queries' => true,
-);
+];
 
 $db['production'] = [
     'dsn' => '',
