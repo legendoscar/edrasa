@@ -798,6 +798,11 @@ class Exam extends Admin_Controller
                 }
             }
         }
+        
         echo $html;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6ce1b73d3f71db988f97632eb3ce7cbea345854b

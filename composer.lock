@@ -55,7 +55,6 @@
         },
         {
             "name": "cloudinary/cloudinary_php",
-<<<<<<< HEAD
             "version": "2.4.1",
             "source": {
                 "type": "git",
@@ -66,18 +65,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/d4dc8e2b1b6c5f30e291d0fc136b84d08f0a31b6",
                 "reference": "d4dc8e2b1b6c5f30e291d0fc136b84d08f0a31b6",
-=======
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cloudinary/cloudinary_php.git",
-                "reference": "c9dee2473af1c2f04aa7f9bbc816a4a821084ce2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cloudinary/cloudinary_php/zipball/c9dee2473af1c2f04aa7f9bbc816a4a821084ce2",
-                "reference": "c9dee2473af1c2f04aa7f9bbc816a4a821084ce2",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shasum": ""
             },
             "require": {
@@ -85,10 +72,7 @@
                 "guzzlehttp/guzzle": "^6|^7",
                 "monolog/monolog": "*",
                 "php": ">=5.6.0",
-<<<<<<< HEAD
                 "psr/log": "^1",
-=======
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shrikeh/teapot": "^1|^2"
             },
             "require-dev": {
@@ -129,7 +113,6 @@
             "support": {
                 "email": "info@cloudinary.com",
                 "issues": "https://github.com/cloudinary/cloudinary_php/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/cloudinary/cloudinary_php/tree/2.4.1"
             },
             "time": "2021-10-15T01:39:14+00:00"
@@ -156,39 +139,6 @@
                 "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
             },
             "type": "library",
-=======
-                "source": "https://github.com/cloudinary/cloudinary_php/tree/2.2.0"
-            },
-            "time": "2021-05-12T12:58:29+00:00"
-        },
-        {
-            "name": "graham-campbell/result-type",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "7e279d2cd5d7fbb156ce46daada972355cea27bb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/7e279d2cd5d7fbb156ce46daada972355cea27bb",
-                "reference": "7e279d2cd5d7fbb156ce46daada972355cea27bb",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0|^8.0",
-                "phpoption/phpoption": "^1.7.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.5|^7.5|^8.5|^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             "autoload": {
                 "psr-4": {
                     "GrahamCampbell\\ResultType\\": "src/"
@@ -201,11 +151,7 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-<<<<<<< HEAD
                     "email": "hello@gjcampbell.co.uk"
-=======
-                    "email": "graham@alt-three.com"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             ],
             "description": "An Implementation Of The Result Type",
@@ -218,11 +164,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.3"
-=======
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.1"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "funding": [
                 {
@@ -234,7 +176,6 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-10-17T19:48:54+00:00"
         },
         {
@@ -249,38 +190,15 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/868b3571a039f0ebc11ac8f344f4080babe2cb94",
                 "reference": "868b3571a039f0ebc11ac8f344f4080babe2cb94",
-=======
-            "time": "2020-04-13T13:17:36+00:00"
-        },
-        {
-            "name": "guzzlehttp/guzzle",
-            "version": "7.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "7008573787b430c1c1f650e3722d9bba59967628"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7008573787b430c1c1f650e3722d9bba59967628",
-                "reference": "7008573787b430c1c1f650e3722d9bba59967628",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-<<<<<<< HEAD
                 "guzzlehttp/promises": "^1.5",
                 "guzzlehttp/psr7": "^1.8.3 || ^2.1",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.2"
-=======
-                "guzzlehttp/promises": "^1.4",
-                "guzzlehttp/psr7": "^1.7 || ^2.0",
-                "php": "^7.2.5 || ^8.0",
-                "psr/http-client": "^1.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "provide": {
                 "psr/http-client-implementation": "1.0"
@@ -290,11 +208,7 @@
                 "ext-curl": "*",
                 "php-http/client-integration-tests": "^3.0",
                 "phpunit/phpunit": "^8.5.5 || ^9.3.5",
-<<<<<<< HEAD
                 "psr/log": "^1.1 || ^2.0 || ^3.0"
-=======
-                "psr/log": "^1.1"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "suggest": {
                 "ext-curl": "Required for CURL handler support",
@@ -304,11 +218,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "7.4-dev"
-=======
-                    "dev-master": "7.3-dev"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             },
             "autoload": {
@@ -325,20 +235,16 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
                     "name": "Graham Campbell",
                     "email": "hello@gjcampbell.co.uk",
                     "homepage": "https://github.com/GrahamCampbell"
                 },
                 {
-=======
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
-<<<<<<< HEAD
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia"
@@ -365,15 +271,6 @@
                 }
             ],
             "description": "Guzzle is a PHP HTTP client library",
-=======
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com",
-                    "homepage": "https://sagikazarmark.hu"
-                }
-            ],
-            "description": "Guzzle is a PHP HTTP client library",
-            "homepage": "http://guzzlephp.org/",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             "keywords": [
                 "client",
                 "curl",
@@ -387,11 +284,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.4.0"
-=======
-                "source": "https://github.com/guzzle/guzzle/tree/7.3.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "funding": [
                 {
@@ -403,7 +296,6 @@
                     "type": "github"
                 },
                 {
-<<<<<<< HEAD
                     "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/guzzle",
                     "type": "tidelift"
                 }
@@ -422,30 +314,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/promises/zipball/fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
                 "reference": "fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
-=======
-                    "url": "https://github.com/alexeyshockov",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/gmponos",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-03-23T11:33:13+00:00"
-        },
-        {
-            "name": "guzzlehttp/promises",
-            "version": "1.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/promises.git",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shasum": ""
             },
             "require": {
@@ -457,11 +325,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "1.5-dev"
-=======
-                    "dev-master": "1.4-dev"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             },
             "autoload": {
@@ -478,7 +342,6 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
                     "name": "Graham Campbell",
                     "email": "hello@gjcampbell.co.uk",
                     "homepage": "https://github.com/GrahamCampbell"
@@ -497,11 +360,6 @@
                     "name": "Tobias Schultze",
                     "email": "webmaster@tubo-world.de",
                     "homepage": "https://github.com/Tobion"
-=======
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             ],
             "description": "Guzzle promises library",
@@ -510,7 +368,6 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/guzzle/promises/tree/1.5.1"
             },
             "funding": [
@@ -557,37 +414,6 @@
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "http-interop/http-factory-tests": "^0.9",
                 "phpunit/phpunit": "^8.5.8 || ^9.3.10"
-=======
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
-            },
-            "time": "2021-03-07T09:25:29+00:00"
-        },
-        {
-            "name": "guzzlehttp/psr7",
-            "version": "1.8.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/psr7.git",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dc960a912984efb74d0a90222870c72c87f10c91",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "psr/http-message": "~1.0",
-                "ralouphie/getallheaders": "^2.0.5 || ^3.0.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "ext-zlib": "*",
-                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.10"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
@@ -595,24 +421,13 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "2.1-dev"
-=======
-                    "dev-master": "1.7-dev"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             },
             "autoload": {
                 "psr-4": {
                     "GuzzleHttp\\Psr7\\": "src/"
-<<<<<<< HEAD
                 }
-=======
-                },
-                "files": [
-                    "src/functions_include.php"
-                ]
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -620,20 +435,16 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
                     "name": "Graham Campbell",
                     "email": "hello@gjcampbell.co.uk",
                     "homepage": "https://github.com/GrahamCampbell"
                 },
                 {
-=======
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
-<<<<<<< HEAD
                     "name": "George Mponos",
                     "email": "gmponos@gmail.com",
                     "homepage": "https://github.com/gmponos"
@@ -657,10 +468,6 @@
                     "name": "Márk Sági-Kazár",
                     "email": "mark.sagikazar@gmail.com",
                     "homepage": "https://sagikazarmark.hu"
-=======
-                    "name": "Tobias Schultze",
-                    "homepage": "https://github.com/Tobion"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             ],
             "description": "PSR-7 message implementation that also provides common utility methods",
@@ -676,7 +483,6 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/guzzle/psr7/tree/2.1.0"
             },
             "funding": [
@@ -707,39 +513,14 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd4380d6fc37626e2f799f29d91195040137eba9",
                 "reference": "fd4380d6fc37626e2f799f29d91195040137eba9",
-=======
-                "source": "https://github.com/guzzle/psr7/tree/1.8.2"
-            },
-            "time": "2021-04-26T09:17:50+00:00"
-        },
-        {
-            "name": "monolog/monolog",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1cb1cde8e8dd0f70cc0fe51354a59acad9302084"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1cb1cde8e8dd0f70cc0fe51354a59acad9302084",
-                "reference": "1cb1cde8e8dd0f70cc0fe51354a59acad9302084",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2",
-<<<<<<< HEAD
                 "psr/log": "^1.0.1 || ^2.0 || ^3.0"
             },
             "provide": {
                 "psr/log-implementation": "1.0.0 || 2.0.0 || 3.0.0"
-=======
-                "psr/log": "^1.0.1"
-            },
-            "provide": {
-                "psr/log-implementation": "1.0.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "require-dev": {
                 "aws/aws-sdk-php": "^2.4.9 || ^3.0",
@@ -747,7 +528,6 @@
                 "elasticsearch/elasticsearch": "^7",
                 "graylog2/gelf-php": "^1.4.2",
                 "mongodb/mongodb": "^1.8",
-<<<<<<< HEAD
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "php-console/php-console": "^3.1.3",
                 "phpspec/prophecy": "^1.6.1",
@@ -756,16 +536,6 @@
                 "predis/predis": "^1.1",
                 "rollbar/rollbar": "^1.3",
                 "ruflin/elastica": ">=0.90@dev",
-=======
-                "php-amqplib/php-amqplib": "~2.4",
-                "php-console/php-console": "^3.1.3",
-                "phpspec/prophecy": "^1.6.1",
-                "phpstan/phpstan": "^0.12.59",
-                "phpunit/phpunit": "^8.5",
-                "predis/predis": "^1.1",
-                "rollbar/rollbar": "^1.3",
-                "ruflin/elastica": ">=0.90 <7.0.1",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
@@ -773,16 +543,11 @@
                 "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
                 "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-<<<<<<< HEAD
                 "ext-curl": "Required to send log messages using the IFTTTHandler, the LogglyHandler, the SendGridHandler, the SlackWebhookHandler or the TelegramBotHandler",
                 "ext-mbstring": "Allow to work properly with unicode symbols",
                 "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
                 "ext-openssl": "Required to send log messages using SSL",
                 "ext-sockets": "Allow sending log messages to a Syslog server (via UDP driver)",
-=======
-                "ext-mbstring": "Allow to work properly with unicode symbols",
-                "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
@@ -821,11 +586,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/Seldaek/monolog/tree/2.3.5"
-=======
-                "source": "https://github.com/Seldaek/monolog/tree/2.2.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "funding": [
                 {
@@ -837,7 +598,6 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-10-01T21:08:31+00:00"
         },
         {
@@ -860,39 +620,11 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "phpunit/phpunit": "^6.5.14 || ^7.0.20 || ^8.5.19 || ^9.5.8"
-=======
-            "time": "2020-12-14T13:15:25+00:00"
-        },
-        {
-            "name": "phpoption/phpoption",
-            "version": "1.7.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/994ecccd8f3283ecf5ac33254543eb0ac946d525",
-                "reference": "994ecccd8f3283ecf5ac33254543eb0ac946d525",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
-                "phpunit/phpunit": "^4.8.35 || ^5.7.27 || ^6.5.6 || ^7.0 || ^8.0 || ^9.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
                     "dev-master": "1.8-dev"
-=======
-                    "dev-master": "1.7-dev"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             },
             "autoload": {
@@ -911,11 +643,7 @@
                 },
                 {
                     "name": "Graham Campbell",
-<<<<<<< HEAD
                     "email": "hello@gjcampbell.co.uk"
-=======
-                    "email": "graham@alt-three.com"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             ],
             "description": "Option Type for PHP",
@@ -927,11 +655,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/schmittjoh/php-option/tree/1.8.0"
-=======
-                "source": "https://github.com/schmittjoh/php-option/tree/1.7.5"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "funding": [
                 {
@@ -943,11 +667,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-08-28T21:27:29+00:00"
-=======
-            "time": "2020-07-20T17:29:33+00:00"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
         },
         {
             "name": "psr/http-client",
@@ -1002,7 +722,6 @@
             "time": "2020-06-29T06:28:15+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "psr/http-factory",
             "version": "1.0.1",
             "source": {
@@ -1058,8 +777,6 @@
             "time": "2019-04-30T12:38:16+00:00"
         },
         {
-=======
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -1264,7 +981,6 @@
             "time": "2017-09-01T13:56:48+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "symfony/deprecation-contracts",
             "version": "v2.4.0",
             "source": {
@@ -1332,8 +1048,6 @@
             "time": "2021-03-23T23:28:01+00:00"
         },
         {
-=======
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             "name": "symfony/polyfill-ctype",
             "version": "v1.23.0",
             "source": {
@@ -1414,7 +1128,6 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-<<<<<<< HEAD
             "version": "v1.23.1",
             "source": {
                 "type": "git",
@@ -1425,18 +1138,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
                 "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
-=======
-            "version": "v1.23.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "2df51500adbaebdc4c38dea4c89a2e131c45c8a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2df51500adbaebdc4c38dea4c89a2e131c45c8a1",
-                "reference": "2df51500adbaebdc4c38dea4c89a2e131c45c8a1",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shasum": ""
             },
             "require": {
@@ -1487,11 +1188,7 @@
                 "shim"
             ],
             "support": {
-<<<<<<< HEAD
                 "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
-=======
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "funding": [
                 {
@@ -1507,7 +1204,6 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-05-27T12:26:48+00:00"
         },
         {
@@ -1522,22 +1218,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
                 "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
-=======
-            "time": "2021-05-27T09:27:20+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php80",
-            "version": "v1.23.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/eca0bf41ed421bed1b57c4958bab16aa86b757d0",
-                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shasum": ""
             },
             "require": {
@@ -1591,11 +1271,7 @@
                 "shim"
             ],
             "support": {
-<<<<<<< HEAD
                 "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
-=======
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "funding": [
                 {
@@ -1611,11 +1287,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-07-28T13:41:28+00:00"
-=======
-            "time": "2021-02-19T12:13:01+00:00"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
         },
         {
             "name": "teapot/status-code",
@@ -1666,7 +1338,6 @@
         },
         {
             "name": "vlucas/phpdotenv",
-<<<<<<< HEAD
             "version": "v5.3.1",
             "source": {
                 "type": "git",
@@ -1677,46 +1348,21 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/accaddf133651d4b5cf81a119f25296736ffc850",
                 "reference": "accaddf133651d4b5cf81a119f25296736ffc850",
-=======
-            "version": "v5.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "b3eac5c7ac896e52deab4a99068e3f4ab12d9e56"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/b3eac5c7ac896e52deab4a99068e3f4ab12d9e56",
-                "reference": "b3eac5c7ac896e52deab4a99068e3f4ab12d9e56",
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 "shasum": ""
             },
             "require": {
                 "ext-pcre": "*",
-<<<<<<< HEAD
                 "graham-campbell/result-type": "^1.0.2",
                 "php": "^7.1.3 || ^8.0",
                 "phpoption/phpoption": "^1.8",
                 "symfony/polyfill-ctype": "^1.23",
                 "symfony/polyfill-mbstring": "^1.23.1",
                 "symfony/polyfill-php80": "^1.23.1"
-=======
-                "graham-campbell/result-type": "^1.0.1",
-                "php": "^7.1.3 || ^8.0",
-                "phpoption/phpoption": "^1.7.4",
-                "symfony/polyfill-ctype": "^1.17",
-                "symfony/polyfill-mbstring": "^1.17",
-                "symfony/polyfill-php80": "^1.17"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
-<<<<<<< HEAD
                 "phpunit/phpunit": "^7.5.20 || ^8.5.21 || ^9.5.10"
-=======
-                "phpunit/phpunit": "^7.5.20 || ^8.5.14 || ^9.5.1"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator."
@@ -1739,21 +1385,11 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-<<<<<<< HEAD
                     "email": "hello@gjcampbell.co.uk"
                 },
                 {
                     "name": "Vance Lucas",
                     "email": "vance@vancelucas.com"
-=======
-                    "email": "graham@alt-three.com",
-                    "homepage": "https://gjcampbell.co.uk/"
-                },
-                {
-                    "name": "Vance Lucas",
-                    "email": "vance@vancelucas.com",
-                    "homepage": "https://vancelucas.com/"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
@@ -1764,11 +1400,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-<<<<<<< HEAD
                 "source": "https://github.com/vlucas/phpdotenv/tree/v5.3.1"
-=======
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.3.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
             },
             "funding": [
                 {
@@ -1780,11 +1412,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
             "time": "2021-10-02T19:24:42+00:00"
-=======
-            "time": "2021-01-20T15:23:13+00:00"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
         }
     ],
     "packages-dev": [],
@@ -1797,9 +1425,5 @@
         "ext-intl": "*"
     },
     "platform-dev": [],
-<<<<<<< HEAD
     "plugin-api-version": "2.1.0"
-=======
-    "plugin-api-version": "2.0.0"
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
 }

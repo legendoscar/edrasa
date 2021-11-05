@@ -2,8 +2,20 @@
   "name": "losintech/losinsms",
   "authors": [
     {
+      "name": "Onuoha Oscar",
+      "email": "devlegendoscar@gmail.com"
+    },
+    {
       "name": "Claret Nnamocha",
       "email": "devclareo@gmail.com"
+    },
+    {
+      "name": "Dike Pascal",
+      "email": "dikep15@gmail.com"
+    },
+    {
+      "name": "Ogbonna Joshua",
+      "email": "devjaykes@gmail.com"
     }
   ],
   "require": {
