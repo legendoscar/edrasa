@@ -71,7 +71,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | the query builder class.
  */
 
-<<<<<<< HEAD
 $active_group = in_array($_SERVER['SERVER_NAME'], ['localhost', '127.0.0.1'])
     ? 'default'
     : 'production';
@@ -83,27 +82,11 @@ $db['default'] = [
     'hostname' => 'localhost',
     'username' => 'root',
     'password' => 'root',
-=======
-$active_group = in_array($_SERVER['SERVER_NAME'], ['localhost', '127.0.0.1']) ? 'default' : 'production';
-
-$query_builder = true;
-
-
-$db['default'] = array(
-    'dsn' => '',
-    'hostname' => 'localhost',
-    'username' => 'root',
-    'password' => '',
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
     'database' => 'losin_sms',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => false,
-<<<<<<< HEAD
     'db_debug' => ENVIRONMENT !== 'production',
-=======
-    'db_debug' => (ENVIRONMENT !== 'production'),
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
     'cache_on' => false,
     'cachedir' => '',
     'char_set' => 'utf8',
@@ -112,19 +95,11 @@ $db['default'] = array(
     'encrypt' => false,
     'compress' => false,
     'stricton' => false,
-<<<<<<< HEAD
     'failover' => [],
     'save_queries' => true,
 ];
 
 $db['production'] = [
-=======
-    'failover' => array(),
-    'save_queries' => true,
-);
-
-$db['production'] = array(
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
     'dsn' => '',
     'hostname' => 'losinsms.com',
     'username' => 'losintec_sms',
@@ -142,12 +117,6 @@ $db['production'] = array(
     'encrypt' => false,
     'compress' => false,
     'stricton' => false,
-<<<<<<< HEAD
     'failover' => [],
     'save_queries' => true,
 ];
-=======
-    'failover' => array(),
-    'save_queries' => true,
-);
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
