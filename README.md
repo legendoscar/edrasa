@@ -78,7 +78,7 @@ Of course, no one software will serve all schools since their needs may be diffe
 
 ### Built With
 
-This section lists the tchnologies used for this product:
+This section lists the technologies used for this product:
 
 * [CodeIgniter PHP Framework](https://codeigniter.com/)
 * [Bootstrap](https://getbootstrap.com)

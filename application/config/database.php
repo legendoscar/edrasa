@@ -81,7 +81,7 @@ $db['default'] = [
     'dsn' => '',
     'hostname' => 'localhost',
     'username' => 'root',
-    'password' => 'root',
+    'password' => '',
     'database' => 'losin_sms',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
@@ -97,7 +97,7 @@ $db['default'] = [
     'stricton' => false,
     'failover' => [],
     'save_queries' => true,
-);
+];
 
 $db['production'] = [
     'dsn' => '',
