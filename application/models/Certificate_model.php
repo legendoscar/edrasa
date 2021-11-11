@@ -9,7 +9,7 @@ class Certificate_model extends MY_Model
     }
 
     public function getList()
-    {
+    {  
         $this->db->select('certificates_templete.*,branch.name as branchname');
         $this->db->from('certificates_templete');
         $this->db->join('branch', 'branch.id = certificates_templete.branch_id', 'left');
@@ -21,7 +21,7 @@ class Certificate_model extends MY_Model
         return $result;
     }
 
-    public function save($data)
+    public function save($data) 
     {
         $background_file = '';
         $oldBackground_file = $this->input->post('old_background_file');

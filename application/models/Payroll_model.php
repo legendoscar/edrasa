@@ -247,7 +247,7 @@ class Payroll_model extends MY_Model
     }
 
     // get employee payment list
-    public function getEmployeePaymentList($branch_id='', $role_id, $month, $year)
+    public function getEmployeePaymentList($role_id, $month, $year, $branch_id='')
     {
         $this->db->select('staff.*,staff_designation.name as designation_name,staff_department.name as department_name,login_credential.role as role_id, roles.name as role, IFNULL(payslip.id, 0) as salary_id, payslip.hash as salary_hash,salary_template.name as template_name, salary_template.basic_salary');
         $this->db->from('staff');
@@ -295,7 +295,7 @@ class Payroll_model extends MY_Model
     }
 
     // get summary report function
-    public function get_summary($branch_id = '', $month = '', $year = '', $staffID)
+    public function get_summary($staffID, $branch_id = '', $month = '', $year = '')
     {
         $this->db->select('payslip.*,staff.name as staff_name,staff.mobileno,IFNULL(staff_designation.name, "N/A") as designation_name,IFNULL(staff_department.name, "N/A") as department_name,payment_types.name as payvia');
         $this->db->from('payslip');

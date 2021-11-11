@@ -87,7 +87,7 @@ class Setting extends Admin_Controller
                     'linkedin_url' => $this->input->post('linkedin_url'),
                     'pinterest_url' => $this->input->post('pinterest_url'),
                     'instagram_url' => $this->input->post('instagram_url'),
-                );
+                ); 
                 // upload logo
                 if (isset($_FILES['logo']) && !empty($_FILES['logo']['name'])) {
                     $config = [];

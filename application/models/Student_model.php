@@ -12,7 +12,7 @@ class Student_model extends MY_Model
     }
 
     // moderator student all information
-    public function save($data, $getBranch)
+    public function save($data, $getBranch) 
     {
         $hostelID = empty($data['hostel_id']) ? 0 : $data['hostel_id'];
         $roomID = empty($data['room_id']) ? 0 : $data['room_id'];

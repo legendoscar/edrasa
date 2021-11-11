@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 
 class Student extends Admin_Controller
-{
+{ 
 
     public function __construct()
     {
@@ -401,7 +401,7 @@ class Student extends Admin_Controller
             if ($this->form_validation->run() == true) {
                 $post = $this->input->post();
                 //save all student information in the database file
-                $studentID = $this->student_model->save($post);
+                $studentID = $this->student_model->save($post, $this->data['branch_id']);
                 //save student enroll information in the database file
                 $arrayEnroll = array(
                     'class_id' => $this->input->post('class_id'),
