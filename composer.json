@@ -22,6 +22,6 @@
     "ext-intl": "*",
     "cloudinary/cloudinary_php": "^2.2",
     "claretnnamocha/php-logger": "^1.0",
-    "vlucas/phpdotenv": "^5.3"
+    "vlucas/phpdotenv": "^5.4"
   }
 }

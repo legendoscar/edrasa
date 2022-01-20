@@ -17,7 +17,7 @@
 					</li>
 					<li class="<?php if ($inside_subview == 'message_sent' || $active == 'sent') echo 'active'; ?>">
 						<a href="<?=base_url('communication/mailbox/sent')?>"> <i class="fas fa-share-square"></i>
-							<?=translate('sent')?> <span class="label text-weight-normal pull-right"><?=$this->application_model->reply_count_unread_message()?></span>
+							<?=translate('sent')?> <span class="label text-weight-normal pull-right"><?=$this->application_model->count_sent_message()?></span>
 						</a>
 					</li>
 					<li class="<?php if ($inside_subview == 'message_important') echo 'active'; ?>">
@@ -26,8 +26,8 @@
 						</a>
 					</li>
 					<li class="<?php if ($inside_subview == 'message_trash') echo 'active'; ?>">
-						<a href="<?=base_url('communication/mailbox/trash')?>"> 
-							<i class="far fa-trash-alt"></i> <?=translate('trash')?>
+						<a href="<?=base_url('communication/mailbox/trash')?>"><i class="far fa-trash-alt"></i>
+						<?=translate('trash')?> <span class="label text-weight-normal pull-right"><?=$this->application_model->count_trash_message()?></span>
 						</a>
 					</li>
 				</ul>

@@ -50,7 +50,9 @@
 					<td><?php echo $count++;?></td>
 					<td><?php echo ($type == 'inbox' ? '<i class="far fa-envelope"></i>' : '<i class="fas fa-share-square"></i>');?></td>
 					<td width="20%"><?php echo $this->application_model->getUserNameByRoleID($userRoleID, $userID)['name']; ?></td>
-					<td><a href="<?php echo base_url('communication/mailbox/read?type='.$type.'&id='.$message->id); ?>" class="text-dark mail-subj"><?php echo $message->subject; ?></a></td>
+					<td>
+						<a href="<?php echo base_url('communication/mailbox/read?type='.$type.'&id='.$message->id); ?>" class="text-dark mail-subj"><?php echo $message->subject; ?></a>
+					</td>
 					<td>
 					<?php
 						$body = strip_tags($message->body);
@@ -59,7 +61,9 @@
 					</td>
 					<td><?php echo get_nicetime(html_escape($message->created_at));?></td>
 				</tr>
-			<?php endforeach; ?>
+			
+					</a>
+						<?php endforeach; ?>
 			</tbody>
 		</table>
 	</div>

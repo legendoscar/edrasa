@@ -170,6 +170,30 @@ class Application_model extends CI_Model
         return $query->num_rows();
     }
 
+    // sent messages counter
+    public function count_sent_message()
+    {
+        $activeUser = loggedin_role_id() . '-' . get_loggedin_user_id();
+        $query = $this->db->select('id')->where(array(
+            'sender' => $activeUser,
+            // 'reply_status' => 1,
+            // 'trash_sent' => 0,
+        ))->get('message');
+        return $query->num_rows();
+    }
+    
+    // trashed messages counter
+    public function count_trash_message()
+    {
+        $activeUser = loggedin_role_id() . '-' . get_loggedin_user_id();
+        $query = $this->db->select('id')->where(array(
+            'sender' => $activeUser,
+            // 'reply_status' => 1,
+            'trash_sent' => 1,
+        ))->get('message');
+        return $query->num_rows();
+    }
+
     // unread message alert in topbar
     public function unread_message_alert()
     {

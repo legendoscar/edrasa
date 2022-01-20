@@ -17,15 +17,15 @@ if ($message->reciever == $active_user) {
 	<div class="panel-body">
 		<h3 class="m-none text-weight-light">
 			<?php echo $message->subject; ?>
-			<a data-id="<?=$message_id?>" href="javascript:;" class="mailbox-fav" data-toggle="tooltip" data-original-title="Click to teach if this conversation is important">
+			<a data-id="<?=$message_id?>" href="javascript:;" class="mailbox-fav" data-toggle="tooltip" data-original-title="Mark as important">
 				<i class="text-warning <?=($status == 0 ? 'far fa-bell' : 'fas fa-bell');?>"></i>
 			</a>
 		</h3>
 		<p class="mt-lg mb-none text-md">
 			<?php 
-			echo 'From <strong class="text-dark">'.$this->application_model->getUserNameByRoleID($senderRoleID, $senderUserID)['name'].'</strong> To ';
-			echo 'From <strong class="text-dark">'.$this->application_model->getUserNameByRoleID($recieverRoleID, $recieverUserID)['name'].'</strong> , Started On ';
-			echo 'From <span class="text-dark">'.date("d/M/Y", strtotime($message->created_at)). '</span>';
+			echo 'Sent by <strong class="text-dark">'.$this->application_model->getUserNameByRoleID($senderRoleID, $senderUserID)['name'].'</strong> ';
+			echo 'To <strong class="text-dark">'.$this->application_model->getUserNameByRoleID($recieverRoleID, $recieverUserID)['name'].'</strong> , ';
+			echo 'On <span class="text-dark">'.date("D d/M/Y", strtotime($message->created_at)). '</span>';
 			?>
 		</p>
 	</div>

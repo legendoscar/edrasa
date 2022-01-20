@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @support : dev@losinsms.com
  * @author url : https://losinsms.com
  * @filename : Accounting.php
- * @copyright : Reserved LosinSMS Team
+ * @copyright : Reserved LosinSMS Team 
  */
 
 class Communication extends Admin_Controller

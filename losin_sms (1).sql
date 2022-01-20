@@ -546,11 +546,11 @@ CREATE TABLE `exam_columns` (
   `id` int NOT NULL,
   `branch_id` varchar(225) NOT NULL,
   `column_name` varchar(225) NOT NULL
-<<<<<<< HEAD
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-=======
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
->>>>>>> ef448f145b85b6221049e851fdd51b0d5c32a854
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 --
 -- Dumping data for table `exam_columns`
@@ -2645,7 +2645,7 @@ CREATE TABLE `login_credential` (
 
 INSERT INTO `login_credential` (`id`, `user_id`, `username`, `password`, `role`, `active`, `last_login`, `created_at`, `updated_at`) VALUES
 (0, 0, 'admin@admin.com', '$2y$10$BAymdWg.jfQF1WzqA4OfTOWT0UIPt5iOz5tZ41POcygYK9j4mcHrO', 7, 1, NULL, '2021-08-01 14:59:44', NULL),
-(4, 3, 'super', '$2y$10$Dqz9tvyC.uUt4/aXFAfgcubcfEfM6Pvm4bHVileWaneLEgsxksyeu', 1, 1, '2021-08-17 19:18:19', '2021-05-18 20:34:20', NULL),
+(4, 3, 'super', '$2y$10$V8ukyu1Il69P.tc3UNdCZ.xL7PzHBragt8Kl1/i9GlB9aOl.iFQEq', 1, 1, '2021-08-17 19:18:19', '2021-05-18 20:34:20', NULL),
 (5, 2, 'admin', '$2y$10$fufaTSlo1YpvMD6MS5weG.gqFb7zsHMq.orLeIxQcSdbgcYwHy3Oy', 2, 1, '2021-07-09 08:41:16', '2021-05-23 19:53:38', NULL),
 (6, 1, 'ekene_grd', '$2y$10$h8j9OW80QeDnrWDHBnu.teHjyW672v5w9TQWFx6Prf8aU9paNqnby', 6, 1, NULL, '2021-05-24 11:03:37', NULL),
 (7, 1, 'ekene_std', '$2y$10$i/D6c1ZvYFI500oEbbl5BOCM3heBvuCMCIL1aZi5LF6bEK9.Nop1O', 7, 1, NULL, '2021-05-24 11:03:37', NULL),
