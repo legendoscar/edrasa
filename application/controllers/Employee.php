@@ -2,13 +2,13 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * @package : Losin School Management System
+ * @package : Edrasa School Management Software
  * @version : 1.0.0
- * @developed by : LosinSMS
- * @support : dev@losinsms.com
- * @author url : https://losinsms.com
- * @filename : Accounting.php
- * @copyright : Reserved LosinSMS Team
+ * @developed by : Edrasa
+ * @support : dev@edrasa.com
+ * @author url : https://edrasa.com
+ * @filename : Employee.php
+ * @copyright : Reserved Edrasa Team
  */
 
 class Employee extends Admin_Controller
@@ -20,7 +20,7 @@ class Employee extends Admin_Controller
         $this->load->helpers('custom_fields');
         $this->load->model('employee_model');
         $this->load->model('email_model');
-        $this->load->model('crud_model');
+        $this->load->model('crud_model'); 
     }
 
     public function index()
@@ -36,14 +36,15 @@ class Employee extends Admin_Controller
         }
         $this->form_validation->set_rules('name', translate('name'), 'trim|required');
         $this->form_validation->set_rules('mobile_no', translate('mobile_no'), 'trim|required');
-        $this->form_validation->set_rules('present_address', translate('present_address'), 'trim|required');
-        $this->form_validation->set_rules('designation_id', translate('designation'), 'trim|required');
+        $this->form_validation->set_rules('present_address', translate('present_address'), 'trim');
+        $this->form_validation->set_rules('designation_id', translate('designation'), 'trim');
         $this->form_validation->set_rules('department_id', translate('department'), 'trim|required');
-        $this->form_validation->set_rules('joining_date', translate('joining_date'), 'trim|required');
-        $this->form_validation->set_rules('qualification', translate('qualification'), 'trim|required');
+        $this->form_validation->set_rules('joining_date', translate('joining_date'), 'trim');
+        $this->form_validation->set_rules('qualification', translate('qualification'), 'trim');
         $this->form_validation->set_rules('user_role', translate('role'), 'trim|required|callback_valid_role');
         $this->form_validation->set_rules('username', translate('username'), 'trim|required|callback_unique_username');
         $this->form_validation->set_rules('email', translate('email'), 'trim|required|valid_email');
+        $this->form_validation->set_rules('sex', translate('sex'), 'trim|required');
         if (!isset($_POST['staff_id'])) {
             $this->form_validation->set_rules('password', translate('password'), 'trim|required|min_length[4]');
             $this->form_validation->set_rules('retype_password', translate('retype_password'), 'trim|required|matches[password]');
@@ -51,6 +52,9 @@ class Employee extends Admin_Controller
         $this->form_validation->set_rules('facebook', 'Facebook', 'valid_url');
         $this->form_validation->set_rules('twitter', 'Twitter', 'valid_url');
         $this->form_validation->set_rules('linkedin', 'Linkedin', 'valid_url');
+        $this->form_validation->set_rules('instagram', 'Instagram', 'valid_url');
+        $this->form_validation->set_rules('pinterest', 'Pinterest', 'valid_url');
+        $this->form_validation->set_rules('youtube', 'YouTube', 'valid_url');
         $this->form_validation->set_rules('user_photo', 'profile_picture',array(array('handle_upload', array($this->application_model, 'profilePicUpload'))));
         // custom fields validation rules
         $class_slug = $this->router->fetch_class();
@@ -84,7 +88,7 @@ class Employee extends Admin_Controller
     protected function bank_validation()
     {
         $this->form_validation->set_rules('bank_name', translate('bank_name'), 'trim|required');
-        $this->form_validation->set_rules('holder_name', translate('holder_name'), 'trim|required');
+        $this->form_validation->set_rules('account_name', translate('account_name'), 'trim|required');
         $this->form_validation->set_rules('bank_branch', translate('bank_branch'), 'trim|required');
         $this->form_validation->set_rules('account_no',  translate('account_no'), 'trim|required');
     }
@@ -104,18 +108,20 @@ class Employee extends Admin_Controller
                 //save all employee information in the database
                 $post = $this->input->post();
                 $user_id = $this->employee_model->save($post);
+                // set_alert('success', translate('information_has_been_saved_successfully'));
 
                 // handle custom fields data
                 $class_slug = $this->router->fetch_class();
                 $customField = $this->input->post("custom_fields[$class_slug]");
                 if (!empty($customField)) {
-                    saveCustomFields($customField, $studentID);
+                    saveCustomFields($customField, $user_id);
                 }
                 set_alert('success', translate('information_has_been_saved_successfully'));
                 
                 //send account activate email
                 $this->email_model->sentStaffRegisteredAccount($post);
-                redirect(base_url('employee/view/' . $post['user_role']));
+                redirect(base_url('employee/profile/' . $post['user_role']));
+                // http://localhost/edrasa/employee/profile/5
             }
         }
         $this->data['branch_id'] = $this->application_model->get_branch_id();

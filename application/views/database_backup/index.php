@@ -13,7 +13,7 @@
 				</a>
 			</li>
 <?php } ?>
-		</ul>
+		</ul> 
 		<div class="tab-content">
 			<div class="tab-pane box active" id="database_backup">
 			<div class="row">

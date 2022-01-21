@@ -12,7 +12,7 @@ class Employee_model extends MY_Model
     }
 
     // moderator employee all information
-    public function save($data, $role = null, $id = null)
+    public function save($data, $role = null, $id = null) 
     {
         $inser_data1 = array(
             'branch_id' => $this->application_model->get_branch_id(),

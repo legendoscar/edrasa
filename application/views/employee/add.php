@@ -19,7 +19,7 @@
 						<i class="fas fa-school"></i> <?=translate('academic_details')?>
 					</div>
 					<div class="row">
-<?php if (is_superadmin_loggedin()) { ?>
+						<?php if (is_superadmin_loggedin()) { ?>
 						<div class="col-md-4 mb-sm">
 							<div class="form-group">
 								<label class="control-label"><?=translate('branch')?> <span class="required">*</span></label>
@@ -45,7 +45,7 @@
 						</div>
 						<div class="col-md-<?=$widget?> mb-sm">
 							<div class="form-group">
-								<label class="control-label"><?=translate('joining_date')?> <span class="required">*</span></label>
+								<label class="control-label"><?=translate('joining_date')?></label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fas fa-birthday-cake"></i></span>
 									<input type="text" class="form-control" name="joining_date" data-plugin-datepicker data-plugin-options='{ "todayHighlight" : true }'
@@ -59,7 +59,7 @@
 					<div class="row">
 						<div class="col-md-6 mb-sm">
 							<div class="form-group">
-								<label class="control-label"><?=translate('designation')?> <span class="required">*</span></label>
+								<label class="control-label"><?=translate('designation')?> </label>
 								<?php
 									$department_list = $this->app_lib->getDesignation($branch_id);
 									echo form_dropdown("designation_id", $department_list, set_value('designation_id'), "class='form-control' id='designation_id'
@@ -83,7 +83,7 @@
 					<div class="row mb-lg">
 						<div class="col-md-4 mb-sm">
 							<div class="form-group">
-								<label class="control-label"><?=translate('qualification')?> <span class="required">*</span></label>
+								<label class="control-label"><?=translate('qualification')?></label>
 								<textarea class="form-control" rows="1" name="qualification"></textarea>
 								<span class="error"><?php echo form_error('qualification'); ?></span>
 							</div>
@@ -120,7 +120,7 @@
 						</div>
 						<div class="col-md-6 mb-sm">
 							<div class="form-group">
-								<label class="control-label"><?=translate('gender')?></label>
+								<label class="control-label"><?=translate('gender')?> <span class="required">*</span></label>
 								<?php
 									$array = array(
 										"" => translate('select'),
@@ -190,7 +190,7 @@
 					<div class="row">
 						<div class="col-md-6 mb-sm">
 							<div class="form-group">
-								<label class="control-label"><?=translate('present_address')?> <span class="required">*</span></label>
+								<label class="control-label"><?=translate('present_address')?> </label>
 								<textarea class="form-control" rows="2" name="present_address" placeholder="<?=translate('present_address')?>" ><?=set_value('present_address')?></textarea>
 							</div>
 							<span class="error"><?php echo form_error('present_address'); ?></span>
@@ -287,9 +287,39 @@
 								<label class="control-label">Linkedin</label>
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fab fa-linkedin-in"></i></span>
-									<input type="text" class="form-control" name="linkedin" value="<?=set_value('linkedin')?>" placeholder="eg: https://www.linkedin.com/username" />
+									<input type="text" class="form-control" name="linkedin" value="<?=set_value('linkedin')?>" placeholder="eg: https://www.linkedin.com/in/username" />
 								</div>
 								<span class="error"><?php echo form_error('linkedin'); ?></span>
+							</div>
+						</div>
+						<div class="col-md-4 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Instagram</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fab fa-instagram"></i></span>
+									<input type="text" class="form-control" name="instagram" value="<?=set_value('instagram')?>" placeholder="eg: https://www.instagram.com/username" />
+								</div>
+								<span class="error"><?php echo form_error('instagram'); ?></span>
+							</div>
+						</div>
+						<div class="col-md-4 mb-sm">
+							<div class="form-group">
+								<label class="control-label">Pinterest</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fab fa-pinterest"></i></span>
+									<input type="text" class="form-control" name="pinterest" value="<?=set_value('pinterest')?>" placeholder="eg: https://www.pinterest.com/username" />
+								</div>
+								<span class="error"><?php echo form_error('instagram'); ?></span>
+							</div>
+						</div>
+						<div class="col-md-4 mb-sm">
+							<div class="form-group">
+								<label class="control-label">YouTube</label>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fab fa-youtube"></i></span>
+									<input type="text" class="form-control" name="youtube" value="<?=set_value('youtube')?>" placeholder="eg: https://www.youtube.com/username" />
+								</div>
+								<span class="error"><?php echo form_error('instagram'); ?></span>
 							</div>
 						</div>
 					</div>
@@ -307,21 +337,21 @@
 						<div class="row">
 							<div class="col-md-4 mb-sm">
 								<div class="form-group">
-									<label class="control-label"><?=translate('holder_name')?> <span class="required">*</span></label>
-									<input type="text" class="form-control" name="holder_name" value="<?=set_value('holder_name')?>" />
-								</div>
-								<span class="error"><?php echo form_error('holder_name'); ?></span>
-							</div>
-							<div class="col-md-4 mb-sm">
-								<div class="form-group">
 									<label class="control-label"><?=translate('account_name')?> <span class="required">*</span></label>
 									<input type="text" class="form-control" name="account_name" value="<?=set_value('account_name')?>" />
-									<span class="error"><?php echo form_error('account_name'); ?></span>
+								</div>
+								<span class="error"><?php echo form_error('account_name'); ?></span>
+							</div>
+							<div class="col-md-4 mb-sm">
+								<div class="form-group">
+									<label class="control-label"><?=translate('account_no')?> <span class="required">*</span></label>
+									<input type="text" class="form-control" name="account_no" value="<?=set_value('account_no')?>" />
+									<span class="error"><?php echo form_error('account_no'); ?></span>
 								</div>
 							</div>
 							<div class="col-md-4 mb-sm">
 								<div class="form-group">
-									<label class="control-label"><?=translate('bank_branch')?> <span class="required">*</span></label>
+									<label class="control-label"><?=translate('bank_name')?> <span class="required">*</span></label>
 									<input type="text" class="form-control" name="bank_branch" value="<?=set_value('bank_branch')?>" />
 									<span class="error"><?php echo form_error('bank_branch'); ?></span>
 								</div>
@@ -341,13 +371,7 @@
 									<input type="text" class="form-control" name="ifsc_code" value="<?=set_value('ifsc_code')?>" />
 								</div>
 							</div>
-							<div class="col-md-4 mb-sm">
-								<div class="form-group">
-									<label class="control-label"><?=translate('account_no')?> <span class="required">*</span></label>
-									<input type="text" class="form-control" name="account_no" value="<?=set_value('account_no')?>" />
-									<span class="error"><?php echo form_error('account_no'); ?></span>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>

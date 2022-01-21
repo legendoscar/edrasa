@@ -2,13 +2,13 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
- * @package : Losin School Management System
+ * @package : Edrasa School Management Software
  * @version : 1.0.0
- * @developed by : LosinSMS
- * @support : dev@losinsms.com
- * @author url : https://losinsms.com
- * @filename : Accounting.php
- * @copyright : Reserved LosinSMS Team
+ * @developed by : Edrasa
+ * @support : dev@edrasa.com
+ * @author url : https://edrasa.com
+ * @filename : Backup.php
+ * @copyright : Reserved Edrasa Team
  */
 
 class Backup extends Admin_Controller
@@ -40,7 +40,7 @@ class Backup extends Admin_Controller
     }
 
     /* create database backup */
-    public function create()
+    public function create() 
     {
         if (!get_permission('backup', 'is_add')) {
             access_denied();
@@ -50,11 +50,11 @@ class Backup extends Admin_Controller
             'format' => 'zip', // gzip, zip, txt
             'add_drop' => true, // Whether to add DROP TABLE statements to backup file
             'add_insert' => true, // Whether to add INSERT data to backup file
-            'filename' => 'DB-backup_' . date('Y-m-d_H-i'),
+            'filename' => 'Edrasa-DB-backup_' . date('Y-m-d_H-i'),
         );
 
         $backup = $this->dbutil->backup($options);
-        if (!write_file('./uploads/db_backup/DB-backup_' . date('Y-m-d_H-i') . '.zip', $backup)) {
+        if (!write_file('./uploads/db_backup/DB-backup_' . date('Y-m-d_H-i-s_A') . '.zip', $backup)) {
             set_alert('error', translate('database_backup_failed'));
         } else {
             set_alert('success', translate('database_backup_completed'));
@@ -96,7 +96,7 @@ class Backup extends Admin_Controller
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('uploaded_file')) {
-                $error = $this->upload->display_errors('', ' ');
+                $error = $this->upload->display_errors('msg', ' jh');
                 set_alert('error', $error);
                 redirect(base_url('backup'));
             } else {
