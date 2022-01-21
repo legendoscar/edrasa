@@ -17,7 +17,6 @@ if ($message->reciever == $active_user) {
 	<div class="panel-body">
 		<h3 class="m-none text-weight-light">
 			<?php echo $message->subject; ?>
-			<a data-id="<?=$message_id?>" href="javascript:;" class="mailbox-fav" data-toggle="tooltip" data-original-title="Mark as important">
 				<i class="text-warning <?=($status == 0 ? 'far fa-bell' : 'fas fa-bell');?>"></i>
 			</a>
 		</h3>

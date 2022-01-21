@@ -177,7 +177,20 @@ class Application_model extends CI_Model
         $query = $this->db->select('id')->where(array(
             'sender' => $activeUser,
             // 'reply_status' => 1,
-            // 'trash_sent' => 0,
+            'trash_sent' => 0,
+        ))->get('message');
+        return $query->num_rows();
+    }
+    
+    
+    // sent messages counter
+    public function count_important_message()
+    {
+        $activeUser = loggedin_role_id() . '-' . get_loggedin_user_id();
+        $query = $this->db->select('id')->where(array(
+            'sender' => $activeUser,
+            'trash_sent' => 0,
+            'fav_sent' => 1,
         ))->get('message');
         return $query->num_rows();
     }

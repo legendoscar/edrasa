@@ -7,7 +7,7 @@
 			</a>
 		</div>
 		<h4 class="panel-title">
-			<i class="far fa-bell"></i> <?=translate('important')?>
+			<i class="text-warning fas fa-bell"></i> <?=translate('important')?>
 		</h4>
 	</header>
 	<div class="panel-body">

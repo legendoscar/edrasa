@@ -23,7 +23,7 @@
 					<th><?=translate('receiver')?></th>
 					<th><?=translate('subjects')?></th>
 					<th><?=translate('message')?></th>
-					<th><?=translate('time')?></th>
+					<th><?=translate('time')?></th> 
 				</tr>
 			</thead>
 			<tbody>
@@ -45,7 +45,7 @@
 					</td>
 					<td width="20%">
 						<a data-id="<?=$message->id?>" href="javascript:void(0);" class="mailbox-fav" data-toggle="tooltip"
-						data-original-title="Click to teach if this conversation is important"><i class="text-warning <?=($message->fav_sent == 0 ? 'far fa-bell' : 'fas fa-bell');?>"></i></a><?='&nbsp;&nbsp;&nbsp;'. $this->application_model->getUserNameByRoleID($recieverRoleID, $recieverUserID)['name']?>
+						data-original-title="Mark as important"><i class="text-warning <?=($message->fav_sent == 0 ? 'far fa-bell' : 'fas fa-bell');?>"></i></a><?='&nbsp;&nbsp;&nbsp;'. $this->application_model->getUserNameByRoleID($recieverRoleID, $recieverUserID)['name']?>
 					</td>
 					<td>
 						<?php echo (!empty($message->file_name) ? '<i class="fas fa-paperclip"></i>' : ''); ?> 

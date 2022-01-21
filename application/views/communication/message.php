@@ -11,22 +11,22 @@
 				<ul class="nav nav-pills nav-stacked">
 					<li class="<?php if ($inside_subview == 'message_inbox' || $active == 'inbox') echo 'active'; ?>">
 						<a href="<?=base_url('communication/mailbox/inbox')?>">
-							<i class="far fa-envelope"></i>
+							<i class="far fa-envelope text-primary"></i>
 							<?=translate('inbox')?> <span class="label text-weight-normal pull-right"><?=$this->application_model->count_unread_message()?></span>
 						</a>
 					</li>
 					<li class="<?php if ($inside_subview == 'message_sent' || $active == 'sent') echo 'active'; ?>">
-						<a href="<?=base_url('communication/mailbox/sent')?>"> <i class="fas fa-share-square"></i>
+						<a href="<?=base_url('communication/mailbox/sent')?>"> <i class="fas fa-share-square text-success"></i>
 							<?=translate('sent')?> <span class="label text-weight-normal pull-right"><?=$this->application_model->count_sent_message()?></span>
 						</a>
 					</li>
 					<li class="<?php if ($inside_subview == 'message_important') echo 'active'; ?>">
-						<a href="<?=base_url('communication/mailbox/important')?>"> <i class="far fa-bell text-yellow"></i>
-							<?=translate('important')?>
+						<a href="<?=base_url('communication/mailbox/important')?>"> <i class="fas fa-bell text-warning"></i>
+							<?=translate('important')?><span class="label text-weight-normal pull-right"><?=$this->application_model->count_important_message()?></span>
 						</a>
 					</li>
 					<li class="<?php if ($inside_subview == 'message_trash') echo 'active'; ?>">
-						<a href="<?=base_url('communication/mailbox/trash')?>"><i class="far fa-trash-alt"></i>
+						<a href="<?=base_url('communication/mailbox/trash')?>"><i class="far fa-trash-alt text-danger"></i>
 						<?=translate('trash')?> <span class="label text-weight-normal pull-right"><?=$this->application_model->count_trash_message()?></span>
 						</a>
 					</li>
