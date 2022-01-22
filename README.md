@@ -14,12 +14,12 @@
     <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Losin School Management Software (Edrasa)</h3>
+  <h3 align="center">Edrasa School Management Software (Edrasa)</h3>
 
   <p align="center">
     School Management System powered by Losintech!
     <br />
-    <a href="http://losin-sms.herokuapp.com/"><strong>Visit the Site »</strong></a>
+    <a href="http://edrasa.herokuapp.com/"><strong>Visit the Site »</strong></a>
     <br />
     <br />
     <a href="http://edrasa-dev.herokuapp.com/dashboard">View Demo</a>
