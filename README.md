@@ -11,7 +11,7 @@
 <!-- <br /> -->
 <div align="center">
   <a href="https://github.com/legendoscar/edrasa">
-    <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="Logo" width="80" height="80">
+    <img src="https://pbs.twimg.com/profile_images/1462717653051658242/ktieqtL5_400x400.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Edrasa School Management Software (Edrasa)</h3>
