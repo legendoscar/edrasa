@@ -1,6 +1,6 @@
 <div id="top"></div>
 <!--
-*** Thanks for checking out LosinSMS School software . If you have a suggestion
+*** Thanks for checking out Edrasa School Management Software . If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
 *** or simply open an issue with the tag "enhancement".
 *** Don't forget to give the project a star!
@@ -10,11 +10,11 @@
 <!-- product LOGO -->
 <!-- <br /> -->
 <div align="center">
-  <a href="https://github.com/legendoscar/losinsms">
+  <a href="https://github.com/legendoscar/edrasa">
     <img src="https://i.pinimg.com/736x/8e/f8/55/8ef855f46702650f9c4f529d537d7d97.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Losin School Management Software (LosinSMS)</h3>
+  <h3 align="center">Losin School Management Software (Edrasa)</h3>
 
   <p align="center">
     School Management System powered by Losintech!
@@ -22,11 +22,11 @@
     <a href="http://losin-sms.herokuapp.com/"><strong>Visit the Site »</strong></a>
     <br />
     <br />
-    <a href="http://losinsms-dev.herokuapp.com/dashboard">View Demo</a>
+    <a href="http://edrasa-dev.herokuapp.com/dashboard">View Demo</a>
     ·
-    <a href="https://github.com/legendoscar/losinsms/issues">Report Bug</a>
+    <a href="https://github.com/legendoscar/edrasa/issues">Report Bug</a>
     ·
-    <a href="https://github.com/legendoscar/losinsms/issues">Request Feature</a>
+    <a href="https://github.com/legendoscar/edrasa/issues">Request Feature</a>
   </p>
 </div>
 
@@ -160,7 +160,7 @@ Here is a list of contributors to this project and their github accounts:
 ## Acknowldgements
 
 
-The LosinSMS Team would like to thank all the contributors to the product.
+The Edrasa Team would like to thank all the contributors to the product.
 
 This repository is maintained by Onuoha Oscar, Product Lead.
 
@@ -171,8 +171,8 @@ This repository is maintained by Onuoha Oscar, Product Lead.
 <!-- CONTACT -->
 ## Contact
 
-Team LosinSMS - [@losinsms](https://twitter.com/losinsms) - losinsms@gmail.com
+Team Edrasa - [@edrasa](https://twitter.com/edrasahq) - edrasahq@gmail.com
 
-Project Link: [https://github.com/legendoscar/losinsms](https://github.com/legendoscar/losinsms)
+Project Link: [https://github.com/legendoscar/edrasa](https://github.com/legendoscar/edrasa)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
