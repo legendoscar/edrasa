@@ -895,7 +895,7 @@ if ( ! function_exists('form_error'))
 			return '';
 		}
 
-		return $OBJ->error($field, $prefix, $suffix);
+		return $OBJ->error($field, $prefix, $suffix); 
 	}
 }
 

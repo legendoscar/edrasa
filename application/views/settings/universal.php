@@ -32,7 +32,7 @@
 						<input type="text" class="form-control" name="institute_name" value="<?= set_value('institute_name', $global_config['institute_name']) ?>" />
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group"> 
 					<label class="col-md-3 control-label"><?= translate('institution_code') ?></label>
 					<div class="col-md-6">
 						<input type="text" class="form-control" name="institution_code" value="<?= set_value('institution_code', $global_config['institution_code']) ?>" />

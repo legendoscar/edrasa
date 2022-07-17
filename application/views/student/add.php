@@ -272,6 +272,27 @@ $this->db->delete('custom_fields_values');
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-md-12 mb-sm">
+						<div class="form-group">
+							<label for="input-file-now">Scan Finger Prints</label>
+							<!-- <input type="file" name="user_photo" class="dropify" /> -->
+							<div class="row">
+								<div class="col-3 mb-sm text-center border border-info">
+									<img class="fprint-1" height="200px" width="20%" style="filter: grayscale(100%);" src="../assets/images/finger_prints/thumb_print_color.jpg" alt="left_thumb_finger_print.jpg">
+									<img class="fprint-2" height="200px" width="20%" style="filter: grayscale(100%);" src="../assets/images/finger_prints/thumb_print_color.jpg" alt="left_thumb_finger_print.jpg">
+									<img class="fprint-3" height="200px" width="20%" style="filter: grayscale(100%);" src="../assets/images/finger_prints/thumb_print_color.jpg" alt="left_thumb_finger_print.jpg">
+									<img class="fprint-4" height="200px" width="20%" style="filter: grayscale(100%);" src="../assets/images/finger_prints/thumb_print_color.jpg" alt="left_thumb_finger_print.jpg">
+									<input type="hidden" name="fprint" class="" id="">
+								</div>
+								<!-- <div class="col-3 mb-sm ml-3">
+									<img class="bg-success" height="200px" src="../assets/images/finger_prints/left_thumb_finger_print.jpg" alt="left_thumb_finger_print.jpg">
+								</div> -->
+							</div>
+							<span class="error"><?=form_error('user_photo')?></span>
+						</div>
+					</div>
+				</div>
 				<div class="<?=isset($getBranch['stu_generate']) == 1 || isset($getBranch['stu_generate']) == "" ? 'hidden-div' : '' ?>" id="stuLogin">
 					<!-- login details -->
 					<div class="headers-line mt-md">
@@ -566,3 +587,53 @@ $this->db->delete('custom_fields_values');
 		</section>
 	</div>
 </div>
+<script>
+	// Creating a cookie after the document is ready
+$(document).ready(function () {
+    getPrintID("printID", "Edrasa", "10");
+	var printID = ('; '+document.cookie).split(`; printID=`).pop().split(';')[0];
+	// alert("This is the finger ID: " + printID);
+});
+
+	// Function to create the cookie
+function getPrintID(name, value, minutes) {
+    var expires;
+      
+    if (minutes) {
+        var date = new Date();
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+      
+    document.cookie = escape(name) + "=" + 
+        escape(value) + expires + "; path=/";
+}
+
+
+// 	$(document).ready(function(){
+//       setTimeout(function(){
+//         //   alert("This is the alert message for timer");
+// 		$('.fprint-1').css('filter','grayscale(0%)');
+//       }, 1000);
+//       setTimeout(function(){
+//         //   alert("This is the alert message for timer");
+// 		$('.fprint-2').css('filter','grayscale(0%)');
+//       }, 2000);
+//       setTimeout(function(){
+//         //   alert("This is the alert message for timer");
+// 		$('.fprint-3').css('filter','grayscale(0%)');
+//       }, 3000);
+//       setTimeout(function(){
+// 		  //   alert("This is the alert message for timer");
+// 		  $('.fprint-4').css('filter','grayscale(0%)');
+//       }, 4000);
+//       setTimeout(function(){
+// 		  var fprint = "sfjkgfgfgsfgdfg";
+// 		    alert("Finger capture with ID: " + "'" + fprint + "'" + " successful!");
+// 		//   $('.fprint-4').css('filter','grayscale(0%)');
+//       }, 5000);
+//  })
+</script>

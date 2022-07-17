@@ -14,7 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Student extends Admin_Controller
 { 
 
-    public function __construct()
+    public function __construct() 
     {
         parent::__construct();
         $this->load->helpers('download');
@@ -72,6 +72,8 @@ class Student extends Admin_Controller
     /* student admission information are prepared and stored in the database here */
     public function add()
     {
+        echo $_COOKIE['printID'];
+        // return;
         // check access permission
         if (!get_permission('student', 'is_add')) {
             access_denied();
